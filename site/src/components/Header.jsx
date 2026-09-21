@@ -20,6 +20,7 @@ export function Header() {
           <a href="#docs" className="hover:text-orange-500 transition-colors">Docs</a>
           <a href="#screens" className="hover:text-orange-500 transition-colors">Screenshots</a>
           <a href="#demo" className="hover:text-orange-500 transition-colors">Demo</a>
+          <a href="#team" className="hover:text-orange-500 transition-colors">Team</a>
           <a href="#faq" className="hover:text-orange-500 transition-colors">FAQ</a>
           <a href="#pack" className="hover:text-orange-500 transition-colors">Pack</a>
         </nav>
@@ -29,11 +30,12 @@ export function Header() {
       </div>
       {open && (
         <div className="md:hidden border-b border-white/10 bg-[#050505] px-4 py-4 space-y-4">
-          <a href="#docs" className="block text-sm text-neutral-400">Docs</a>
-          <a href="#screens" className="block text-sm text-neutral-400">Screenshots</a>
-          <a href="#demo" className="block text-sm text-neutral-400">Demo</a>
-          <a href="#faq" className="block text-sm text-neutral-400">FAQ</a>
-          <a href="#pack" className="block text-sm text-neutral-400">Pack</a>
+          <a href="#docs" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Docs</a>
+          <a href="#screens" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Screenshots</a>
+          <a href="#demo" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Demo</a>
+          <a href="#team" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Team</a>
+          <a href="#faq" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">FAQ</a>
+          <a href="#pack" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Pack</a>
         </div>
       )}
     </header>
