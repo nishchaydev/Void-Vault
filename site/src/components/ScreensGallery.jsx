@@ -12,7 +12,7 @@ export function ScreensGallery() {
               <span className="text-neutral-600 font-mono text-sm">[Pending Screen {i+1}]</span>
             </div>
             <div className="p-4">
-              <div className="text-xs text-cyan-400 font-mono mb-1">Module {i+1}</div>
+              <div className="text-xs text-orange-500 font-mono mb-1">Module {i+1}</div>
               <h3 className="text-white text-sm font-medium mb-1">Feature Demonstration</h3>
               <p className="text-neutral-500 text-xs line-clamp-2">Matches PS requirement section X.Y showing capabilities.</p>
             </div>

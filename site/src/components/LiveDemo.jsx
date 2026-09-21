@@ -17,13 +17,13 @@ export default function LiveDemo() {
   return (
     <section id="demo" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[130px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[130px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             06 — LIVE EVALUATION DEMONSTRATION
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -42,7 +42,7 @@ export default function LiveDemo() {
             {/* Top Frame Header */}
             <div className="px-4 py-3 bg-white/[0.02] border-b border-white/[0.06] flex items-center justify-between text-xs font-mono relative z-10">
               <div className="flex items-center gap-2 text-neutral-300">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 <span>CLI Option 7: 60-Second Automated Evaluator Battle Demo</span>
               </div>
               <span className="text-neutral-500 hidden sm:inline">127.0.0.1:5001 Direct IPC</span>
@@ -72,7 +72,7 @@ export default function LiveDemo() {
                           window.open(siteConfig.links.demoVideoUrl, '_blank');
                         }
                       }}
-                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-500 text-white flex items-center justify-center shadow-2xl shadow-cyan-500/40 hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/20 cursor-pointer"
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-500 text-white flex items-center justify-center shadow-2xl shadow-orange-500/40 hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/20 cursor-pointer"
                       aria-label="Play demonstration video"
                     >
                       <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-white ml-1" />
@@ -85,7 +85,7 @@ export default function LiveDemo() {
                       See classified test file injection, standard OS Shift+Delete failure, adversarial deep carving proof, Smart Secure Wipe™ (67s), and court-admissible BSA 2023 certification.
                     </p>
 
-                    <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-cyan-300 backdrop-blur-md">
+                    <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-orange-300 backdrop-blur-md">
                       <span>Video Demonstration:</span>
                       <span className="text-neutral-400 truncate max-w-[220px]">{siteConfig.links.demoVideoUrl}</span>
                     </div>
@@ -105,7 +105,7 @@ export default function LiveDemo() {
             {/* Bottom Actions Bar */}
             <div className="p-4 sm:p-5 bg-white/[0.01] border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono relative z-10">
               <div className="flex items-center gap-2 text-neutral-400">
-                <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                <ShieldCheck className="w-4 h-4 text-orange-500" />
                 <span>152/152 Test Scenarios Passing • 0 Failures</span>
               </div>
 
@@ -124,7 +124,7 @@ export default function LiveDemo() {
                   href="https://github.com/nishchaydev/sih2026"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30 border border-cyan-500/40 transition-colors"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-orange-500/20 text-orange-300 hover:bg-orange-500/30 border border-orange-500/40 transition-colors"
                 >
                   <span>Run CLI Option 7</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -144,10 +144,10 @@ export default function LiveDemo() {
             >
               <GlowingEffect hoverLiquid breathe spread={30} proximity={45} />
               <div className="relative z-10">
-                <div className="w-7 h-7 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 font-mono text-xs font-bold flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <div className="w-7 h-7 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-500 font-mono text-xs font-bold flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
                   {ws.step}
                 </div>
-                <h4 className="text-sm font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                <h4 className="text-sm font-bold text-white mb-1 group-hover:text-orange-300 transition-colors">
                   {ws.title}
                 </h4>
                 <p className="text-xs text-neutral-400 font-light leading-relaxed">

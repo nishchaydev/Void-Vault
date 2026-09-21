@@ -9,13 +9,13 @@ export default function ValidationBenchmarks() {
   return (
     <section id="benchmarks" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             10 — EMPIRICAL BENCHMARKS & PHYSICAL METRICS
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -41,7 +41,7 @@ export default function ValidationBenchmarks() {
                   <span className="text-4xl sm:text-5xl font-black tracking-tight text-white font-mono">
                     {metric.value}
                   </span>
-                  <span className="text-xs sm:text-sm font-mono text-cyan-400 uppercase font-semibold">
+                  <span className="text-xs sm:text-sm font-mono text-orange-500 uppercase font-semibold">
                     {metric.unit}
                   </span>
                 </div>
@@ -55,8 +55,8 @@ export default function ValidationBenchmarks() {
               </div>
 
               <div className="pt-3 border-t border-white/[0.06] relative z-10">
-                <span className="text-[11px] font-mono text-cyan-300 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                <span className="text-[11px] font-mono text-orange-300 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   {metric.comparison}
                 </span>
               </div>
@@ -71,11 +71,11 @@ export default function ValidationBenchmarks() {
             className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/[0.03] transition-colors cursor-pointer"
           >
             <div className="flex items-center gap-2.5">
-              <HelpCircle className="w-4 h-4 text-cyan-400" />
+              <HelpCircle className="w-4 h-4 text-orange-500" />
               <span className="text-sm font-bold text-white tracking-wide font-mono">
                 Hardware Testbed & Measurement Methodology
               </span>
-              <span className="text-[10px] font-mono text-cyan-300 bg-white/5 px-2 py-0.5 rounded border border-white/10 hidden sm:inline">
+              <span className="text-[10px] font-mono text-orange-300 bg-white/5 px-2 py-0.5 rounded border border-white/10 hidden sm:inline">
                 Reproducible Laboratory Protocols
               </span>
             </div>

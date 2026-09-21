@@ -3,14 +3,14 @@ import React, { useEffect, useRef } from 'react';
 /**
  * WebGL shader animation — flowing radial laser lines adapted from the Orbit design system.
  * Pure native WebGL quad with zero external dependencies.
- * Tuned with Void Vault's cyber-forensic electric cyan and deep indigo palette.
+ * Tuned with Orbit's signature electric orange and warm ember palette.
  */
 export function ShaderAnimation({
   className = '',
   speed = 1,
   intensity = 1.25,
-  warm = [0.0, 0.85, 1.0], // Electric Cyan
-  cool = [0.0, 0.65, 0.80], // Cobalt Steel
+  warm = [1.0, 0.337, 0.0], // Orbit Electric Orange #FF5600
+  cool = [0.72, 0.15, 0.0], // Deep Ember #B83F00
   reducedMotion = false,
 }) {
   const canvasRef = useRef(null);

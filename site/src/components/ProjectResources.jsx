@@ -19,13 +19,13 @@ export default function ProjectResources() {
   return (
     <section id="resources" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             16 — CENTRAL ARSENAL & REPO LINK TREE
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -52,7 +52,7 @@ export default function ProjectResources() {
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 rounded-xl border border-white/10 bg-white/5 text-cyan-300 group-hover:scale-105 transition-transform">
+                    <div className="p-2.5 rounded-xl border border-white/10 bg-white/5 text-orange-300 group-hover:scale-105 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
 
@@ -61,7 +61,7 @@ export default function ProjectResources() {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-orange-300 transition-colors">
                     {res.title}
                   </h3>
                   <p className="text-xs text-neutral-300 leading-relaxed mb-6 font-light">
@@ -70,11 +70,11 @@ export default function ProjectResources() {
                 </div>
 
                 <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono font-medium relative z-10">
-                  <span className="text-cyan-300 group-hover:text-white transition-colors">
+                  <span className="text-orange-300 group-hover:text-white transition-colors">
                     {res.cta}
                   </span>
                   {res.isExternal ? (
-                    <ArrowUpRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-orange-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   ) : (
                     <ChevronRight className="w-4 h-4 text-neutral-400 group-hover:translate-x-0.5 transition-transform" />
                   )}
@@ -89,7 +89,7 @@ export default function ProjectResources() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-white/[0.06]">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <FolderGit2 className="w-5 h-5 text-cyan-400" />
+                <FolderGit2 className="w-5 h-5 text-orange-500" />
                 <h3 className="text-lg sm:text-xl font-bold text-white font-mono">
                   Comprehensive Repository Tree
                 </h3>
@@ -103,7 +103,7 @@ export default function ProjectResources() {
               href="https://github.com/nishchaydev/sih2026"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-mono transition-colors whitespace-nowrap self-start sm:self-auto"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 text-xs font-mono transition-colors whitespace-nowrap self-start sm:self-auto"
             >
               <Github className="w-4 h-4" />
               <span>Open github.com/nishchaydev/sih2026</span>
@@ -114,8 +114,8 @@ export default function ProjectResources() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {repoLinkTree.map((categoryGroup, idx) => (
               <div key={idx} className="flex flex-col">
-                <h4 className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                <h4 className="text-xs font-mono uppercase tracking-widest text-orange-500 font-semibold mb-3 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                   {categoryGroup.category}
                 </h4>
 
@@ -129,15 +129,15 @@ export default function ProjectResources() {
                       className="group/item flex items-start justify-between gap-3 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.04] hover:border-white/10 transition-all duration-200"
                     >
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1.5 text-xs font-semibold text-white group-hover/item:text-cyan-300 transition-colors">
-                          <Link2 className="w-3 h-3 text-neutral-500 group-hover/item:text-cyan-400" />
+                        <div className="flex items-center gap-1.5 text-xs font-semibold text-white group-hover/item:text-orange-300 transition-colors">
+                          <Link2 className="w-3 h-3 text-neutral-500 group-hover/item:text-orange-500" />
                           <span className="truncate">{item.name}</span>
                         </div>
                         <p className="text-[11px] text-neutral-400 font-light mt-0.5 truncate">
                           {item.desc}
                         </p>
                       </div>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover/item:text-cyan-400 shrink-0 mt-0.5" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover/item:text-orange-500 shrink-0 mt-0.5" />
                     </a>
                   ))}
                 </div>

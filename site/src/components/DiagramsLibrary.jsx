@@ -7,13 +7,13 @@ export default function DiagramsLibrary({ onOpenLightbox }) {
   return (
     <section id="diagrams" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan-500/5 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-orange-500/5 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             08 — TECHNICAL ARCHITECTURAL SCHEMATICS
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -47,7 +47,7 @@ export default function DiagramsLibrary({ onOpenLightbox }) {
                   />
                   <div className="absolute inset-0 bg-[#050505]/40 opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-center justify-center pointer-events-none backdrop-blur-[2px]">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900/90 border border-white/20 text-xs text-white font-medium shadow-xl">
-                      <Eye className="w-3.5 h-3.5 text-cyan-400" />
+                      <Eye className="w-3.5 h-3.5 text-orange-500" />
                       <span>View Fullscreen Schematic</span>
                     </span>
                   </div>
@@ -56,7 +56,7 @@ export default function DiagramsLibrary({ onOpenLightbox }) {
                 {/* Card Body */}
                 <div className="p-5 sm:p-6">
                   <div className="flex items-center justify-between mb-2.5">
-                    <span className="text-[10px] font-mono uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/5 text-cyan-300 border border-white/10">
+                    <span className="text-[10px] font-mono uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-white/5 text-orange-300 border border-white/10">
                       {diagram.category}
                     </span>
                     <span className="text-[10px] font-mono text-neutral-500 uppercase">
@@ -64,7 +64,7 @@ export default function DiagramsLibrary({ onOpenLightbox }) {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
                     {diagram.title}
                   </h3>
                   <p className="text-xs text-neutral-300 leading-relaxed mb-3">
@@ -82,14 +82,14 @@ export default function DiagramsLibrary({ onOpenLightbox }) {
                   onClick={() => onOpenLightbox && onOpenLightbox(diagram.fullImage, diagram.title, diagram.details)}
                   className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-medium text-neutral-200 transition-colors cursor-pointer border border-white/10"
                 >
-                  <Eye className="w-3.5 h-3.5 text-cyan-400" />
+                  <Eye className="w-3.5 h-3.5 text-orange-500" />
                   <span>Inspect</span>
                 </button>
 
                 <a
                   href={diagram.downloadUrl}
                   download
-                  className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg bg-cyan-950/60 hover:bg-cyan-900/60 text-xs font-medium text-cyan-300 border border-cyan-800/60 transition-colors"
+                  className="inline-flex items-center justify-center gap-1 px-3 py-1.5 rounded-lg bg-orange-950/60 hover:bg-orange-900/60 text-xs font-medium text-orange-300 border border-orange-800/60 transition-colors"
                   title="Download Vector SVG"
                 >
                   <Download className="w-3.5 h-3.5" />

@@ -52,7 +52,7 @@ export function LargeNameFooter() {
               <span className="relative z-10 transition-all duration-300 ease-out text-neutral-400 group-hover/btn:text-white group-hover/btn:scale-110">
                 <Github className="w-4 h-4" />
               </span>
-              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-cyan-400 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
+              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-orange-500 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
               <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-neutral-900 border border-white/10 text-white text-[11px] font-medium whitespace-nowrap transition-all duration-300 ease-out opacity-0 translate-y-1 pointer-events-none group-hover/btn:opacity-100 group-hover/btn:translate-y-0 shadow-xl">
                 GitHub Repo
               </span>
@@ -70,7 +70,7 @@ export function LargeNameFooter() {
               <span className="relative z-10 transition-all duration-300 ease-out text-neutral-400 group-hover/btn:text-white group-hover/btn:scale-110">
                 <Cpu className="w-4 h-4" />
               </span>
-              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-cyan-400 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
+              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-orange-500 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
               <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-neutral-900 border border-white/10 text-white text-[11px] font-medium whitespace-nowrap transition-all duration-300 ease-out opacity-0 translate-y-1 pointer-events-none group-hover/btn:opacity-100 group-hover/btn:translate-y-0 shadow-xl">
                 Architecture SVG
               </span>
@@ -86,7 +86,7 @@ export function LargeNameFooter() {
               <span className="relative z-10 transition-all duration-300 ease-out text-neutral-400 group-hover/btn:text-white group-hover/btn:scale-110">
                 <FileText className="w-4 h-4" />
               </span>
-              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-cyan-400 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
+              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-orange-500 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
               <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-neutral-900 border border-white/10 text-white text-[11px] font-medium whitespace-nowrap transition-all duration-300 ease-out opacity-0 translate-y-1 pointer-events-none group-hover/btn:opacity-100 group-hover/btn:translate-y-0 shadow-xl">
                 52 Papers Dossier
               </span>
@@ -102,7 +102,7 @@ export function LargeNameFooter() {
               <span className="relative z-10 transition-all duration-300 ease-out text-neutral-400 group-hover/btn:text-white group-hover/btn:scale-110">
                 <ArrowUp className="w-4 h-4" />
               </span>
-              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-cyan-400 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
+              <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-orange-500 transition-all duration-300 ease-out w-0 opacity-0 group-hover/btn:w-3 group-hover/btn:opacity-100"></span>
               <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-neutral-900 border border-white/10 text-white text-[11px] font-medium whitespace-nowrap transition-all duration-300 ease-out opacity-0 translate-y-1 pointer-events-none group-hover/btn:opacity-100 group-hover/btn:translate-y-0 shadow-xl">
                 Back to Top
               </span>

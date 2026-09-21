@@ -7,13 +7,13 @@ export default function TeamSection() {
   return (
     <section id="team" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             12 — TEAM eMitra
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -36,7 +36,7 @@ export default function TeamSection() {
               <div className="relative z-10">
                 {/* Header: Tag & Links */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded bg-white/5 text-cyan-300 border border-white/10">
+                  <span className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded bg-white/5 text-orange-300 border border-white/10">
                     {member.tag}
                   </span>
 
@@ -56,10 +56,10 @@ export default function TeamSection() {
                 </div>
 
                 {/* Name & Role */}
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-orange-300 transition-colors">
                   {member.name}
                 </h3>
-                <span className="text-xs font-medium text-cyan-400 block mb-3 font-mono">
+                <span className="text-xs font-medium text-orange-500 block mb-3 font-mono">
                   {member.role}
                 </span>
 
@@ -90,7 +90,7 @@ export default function TeamSection() {
 
         {/* Team Banner */}
         <div className="mt-12 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] text-center max-w-xl mx-auto flex items-center justify-center gap-3 backdrop-blur-md">
-          <Award className="w-5 h-5 text-cyan-400 shrink-0" />
+          <Award className="w-5 h-5 text-orange-500 shrink-0" />
           <p className="text-xs font-mono text-neutral-300">
             Team eMitra • Smart India Hackathon 2026 Grand Finale • NTRO PS-26149
           </p>

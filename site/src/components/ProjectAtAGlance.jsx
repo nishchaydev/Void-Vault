@@ -95,13 +95,13 @@ export default function ProjectAtAGlance() {
   return (
     <section id="glance" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             02 — THE PROJECT AT A GLANCE
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -125,7 +125,7 @@ export default function ProjectAtAGlance() {
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 rounded-xl border border-white/10 bg-white/5 text-cyan-400 group-hover:scale-105 transition-transform">
+                    <div className="p-2.5 rounded-xl border border-white/10 bg-white/5 text-orange-500 group-hover:scale-105 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="text-[11px] font-mono tracking-wider text-neutral-400 uppercase font-semibold">
@@ -133,10 +133,10 @@ export default function ProjectAtAGlance() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white tracking-wide mb-1 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-lg font-bold text-white tracking-wide mb-1 group-hover:text-orange-300 transition-colors">
                     {card.title}
                   </h3>
-                  <p className="text-xs font-mono text-cyan-400/90 mb-3">
+                  <p className="text-xs font-mono text-orange-500/90 mb-3">
                     {card.summary}
                   </p>
                   <p className="text-xs text-neutral-300 leading-relaxed font-light">
@@ -161,7 +161,7 @@ export default function ProjectAtAGlance() {
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/[0.06]">
               <div>
-                <span className="text-xs font-mono font-semibold tracking-wider text-cyan-400 uppercase">
+                <span className="text-xs font-mono font-semibold tracking-wider text-orange-500 uppercase">
                   CLOSED-LOOP WORKFLOW PIPELINE
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
@@ -183,16 +183,16 @@ export default function ProjectAtAGlance() {
                     onClick={() => setActiveStage(idx)}
                     className={`relative text-left p-3.5 rounded-xl border transition-all duration-200 cursor-pointer ${
                       isSelected
-                        ? 'bg-cyan-500/20 border-cyan-500/60 shadow-md shadow-cyan-500/10'
+                        ? 'bg-orange-500/20 border-orange-500/60 shadow-md shadow-orange-500/10'
                         : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.05] hover:border-white/10'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className={`text-[10px] font-mono font-bold ${isSelected ? 'text-cyan-300' : 'text-neutral-400'}`}>
+                      <span className={`text-[10px] font-mono font-bold ${isSelected ? 'text-orange-300' : 'text-neutral-400'}`}>
                         STAGE {stage.step}
                       </span>
                       {isSelected && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-ping" />
                       )}
                     </div>
                     <div className={`text-xs font-bold font-mono tracking-wider truncate ${isSelected ? 'text-white' : 'text-neutral-300'}`}>
@@ -207,7 +207,7 @@ export default function ProjectAtAGlance() {
             <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-5 sm:p-6 transition-all">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-cyan-950 text-cyan-300 border border-cyan-800/60">
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-orange-950 text-orange-300 border border-orange-800/60">
                     STAGE {pipelineStages[activeStage].step}
                   </span>
                   <h4 className="text-base sm:text-lg font-bold text-white">
@@ -225,7 +225,7 @@ export default function ProjectAtAGlance() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/[0.06] font-mono text-xs">
                 <div className="flex items-start gap-2">
-                  <Terminal className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <Terminal className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                   <div>
                     <span className="text-neutral-400 block text-[11px]">Hardware APIs & Algorithms:</span>
                     <span className="text-neutral-200">{pipelineStages[activeStage].hardwareDetail}</span>

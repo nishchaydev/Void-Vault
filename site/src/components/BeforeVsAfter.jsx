@@ -41,7 +41,7 @@ export default function BeforeVsAfter() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             15 — PARADIGM SHIFT
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -73,17 +73,17 @@ export default function BeforeVsAfter() {
 
               {/* TRANSITION INDICATOR (Center) */}
               <div className="md:col-span-2 p-2 bg-[#090D15] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-800/80">
-                <span className="p-2 rounded-full bg-slate-900 border border-slate-700 text-cyan-400 text-xs font-mono font-bold flex items-center gap-1">
+                <span className="p-2 rounded-full bg-slate-900 border border-slate-700 text-orange-500 text-xs font-mono font-bold flex items-center gap-1">
                   <span className="hidden md:inline">→</span>
                   <span className="md:hidden">↓</span>
                 </span>
               </div>
 
               {/* VOID VAULT (Right) */}
-              <div className="md:col-span-5 p-5 sm:p-6 bg-cyan-950/20 flex items-start gap-3.5">
-                <CheckCircle className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+              <div className="md:col-span-5 p-5 sm:p-6 bg-orange-950/20 flex items-start gap-3.5">
+                <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[10px] font-mono uppercase font-bold text-cyan-300 block mb-1">
+                  <span className="text-[10px] font-mono uppercase font-bold text-orange-300 block mb-1">
                     VOID VAULT UNIFIED WORKFLOW
                   </span>
                   <h4 className="text-sm font-bold text-white mb-1">{item.after}</h4>

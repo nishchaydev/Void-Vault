@@ -5,8 +5,8 @@ import { Download } from 'lucide-react';
 export function PackSection() {
   return (
     <section id="pack" className="py-24 px-4 max-w-3xl mx-auto text-center">
-      <div className="p-8 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-cyan-400 blur-sm" />
+      <div className="p-8 rounded-2xl border border-orange-500/20 bg-orange-500/5 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-orange-500 blur-sm" />
         <h2 className="text-2xl font-bold text-white mb-2">Evaluator Pack</h2>
         <p className="text-neutral-400 mb-8 text-sm">Offline ZIP containing all docs, diagrams, and proof samples.</p>
         

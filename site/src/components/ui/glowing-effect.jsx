@@ -174,7 +174,7 @@ export function GlowingEffect({
         style={{
           padding: "var(--ge-border)",
           background:
-            "conic-gradient(from var(--ge-angle, 0deg), transparent 0deg, color-mix(in oklab, var(--accent, #38bdf8) 55%, transparent) calc(var(--ge-spread) * 0.35deg), color-mix(in oklab, var(--accent, #38bdf8) 95%, transparent) calc(var(--ge-spread) * 0.75deg), oklch(0.78 0.17 240) calc(var(--ge-spread) * 1deg), color-mix(in oklab, var(--accent, #38bdf8) 95%, transparent) calc(var(--ge-spread) * 1.25deg), color-mix(in oklab, var(--accent, #38bdf8) 55%, transparent) calc(var(--ge-spread) * 1.65deg), transparent calc(var(--ge-spread) * 2deg))",
+            "conic-gradient(from var(--ge-angle, 0deg), transparent 0deg, color-mix(in oklab, var(--accent, #FF5600) 55%, transparent) calc(var(--ge-spread) * 0.35deg), color-mix(in oklab, var(--accent, #FF5600) 95%, transparent) calc(var(--ge-spread) * 0.75deg), oklch(0.68 0.19 40) calc(var(--ge-spread) * 1deg), color-mix(in oklab, var(--accent, #FF5600) 95%, transparent) calc(var(--ge-spread) * 1.25deg), color-mix(in oklab, var(--accent, #FF5600) 55%, transparent) calc(var(--ge-spread) * 1.65deg), transparent calc(var(--ge-spread) * 2deg))",
           WebkitMask:
             "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
           WebkitMaskComposite: "xor",
@@ -182,7 +182,7 @@ export function GlowingEffect({
           opacity: "var(--ge-active, 0)",
           transition: "opacity 180ms cubic-bezier(0.22, 0.61, 0.36, 1)",
           filter:
-            "drop-shadow(0 0 4px color-mix(in oklab, var(--accent, #38bdf8) 65%, transparent)) drop-shadow(0 0 12px color-mix(in oklab, var(--accent, #38bdf8) 40%, transparent)) drop-shadow(0 0 22px color-mix(in oklab, oklch(0.72 0.16 240) 45%, transparent))",
+            "drop-shadow(0 0 4px color-mix(in oklab, var(--accent, #FF5600) 65%, transparent)) drop-shadow(0 0 12px color-mix(in oklab, var(--accent, #FF5600) 40%, transparent)) drop-shadow(0 0 22px color-mix(in oklab, oklch(0.68 0.19 40) 45%, transparent))",
           willChange: "opacity",
         }}
       />

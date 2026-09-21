@@ -64,7 +64,7 @@ export default function WhyVoidVault() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             03 — WHY VOID VAULT?
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -120,42 +120,42 @@ export default function WhyVoidVault() {
           </div>
 
           {/* Void Vault Unified Workflow */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-cyan-950/20 border border-cyan-500/40 flex flex-col justify-between shadow-xl shadow-cyan-950/30">
+          <div className="p-6 sm:p-8 rounded-2xl bg-orange-950/20 border border-orange-500/40 flex flex-col justify-between shadow-xl shadow-orange-950/30">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-cyan-800/40 mb-6">
+              <div className="flex items-center justify-between pb-4 border-b border-orange-800/40 mb-6">
                 <div className="flex items-center gap-2.5">
-                  <span className="p-1.5 rounded-lg bg-cyan-900/40 text-cyan-300">
+                  <span className="p-1.5 rounded-lg bg-orange-900/40 text-orange-300">
                     <Check className="w-5 h-5" />
                   </span>
                   <div>
                     <h3 className="text-lg font-bold text-white tracking-wide">
                       ONE UNIFIED WORKFLOW
                     </h3>
-                    <span className="text-xs font-mono text-cyan-300">Void Vault Closed-Loop Architecture</span>
+                    <span className="text-xs font-mono text-orange-300">Void Vault Closed-Loop Architecture</span>
                   </div>
                 </div>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-semibold">
+                <span className="text-xs font-mono px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-700/60 font-semibold">
                   1 Sovereign Binary
                 </span>
               </div>
 
               <div className="space-y-4">
                 {solutions.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-cyan-800/30">
-                    <span className="w-5 h-5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-700/60 flex items-center justify-center shrink-0 text-xs font-mono font-bold mt-0.5">
+                  <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-orange-800/30">
+                    <span className="w-5 h-5 rounded-full bg-orange-950 text-orange-300 border border-orange-700/60 flex items-center justify-center shrink-0 text-xs font-mono font-bold mt-0.5">
                       ✓
                     </span>
                     <div>
                       <h4 className="text-sm font-semibold text-white">{item.title}</h4>
                       <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">{item.desc}</p>
-                      <span className="text-[11px] font-mono text-cyan-300 font-medium mt-1 inline-block">★ {item.sub}</span>
+                      <span className="text-[11px] font-mono text-orange-300 font-medium mt-1 inline-block">★ {item.sub}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-cyan-800/40 flex items-center justify-between text-xs font-mono text-cyan-300 font-semibold">
+            <div className="mt-8 pt-4 border-t border-orange-800/40 flex items-center justify-between text-xs font-mono text-orange-300 font-semibold">
               <span>Recovery + Sanitization + Verification + Audit</span>
             </div>
           </div>

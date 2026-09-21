@@ -24,11 +24,11 @@ export function LinkCards() {
         <div key={i} className="relative group rounded-xl bg-white/[0.02] border border-white/5 p-4 flex items-center justify-between hover:bg-white/[0.04] transition-colors cursor-pointer">
           <GlowingEffect spread={40} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
           <div className="flex items-center gap-4 relative z-10">
-            <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 text-cyan-400 group-hover:text-cyan-300">
+            <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center border border-orange-500/20 text-orange-500 group-hover:text-orange-300">
               <link.icon size={20} />
             </div>
             <div>
-              <h3 className="text-white font-medium group-hover:text-cyan-400 transition-colors">{link.title}</h3>
+              <h3 className="text-white font-medium group-hover:text-orange-500 transition-colors">{link.title}</h3>
               <p className="text-neutral-500 text-sm">{link.desc}</p>
             </div>
           </div>

@@ -7,7 +7,7 @@ export default function GitHubSection() {
   return (
     <section className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -44,7 +44,7 @@ export default function GitHubSection() {
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
                 <span className="text-neutral-500 block text-[10px] uppercase">Kernel Drivers</span>
-                <span className="text-cyan-300 font-bold text-sm">0 (Pure Win32 FFI)</span>
+                <span className="text-orange-300 font-bold text-sm">0 (Pure Win32 FFI)</span>
               </div>
               <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
                 <span className="text-neutral-500 block text-[10px] uppercase">SCIF Deployment</span>
@@ -58,7 +58,7 @@ export default function GitHubSection() {
                 href={siteConfig.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full text-xs sm:text-sm font-mono font-medium text-white bg-gradient-to-r from-cyan-500 to-cyan-500 hover:from-cyan-400 hover:to-cyan-400 shadow-xl shadow-cyan-500/25 transition-all duration-300 relative group overflow-hidden"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full text-xs sm:text-sm font-mono font-medium text-white bg-gradient-to-r from-orange-500 to-orange-500 hover:from-orange-500 hover:to-orange-500 shadow-xl shadow-orange-500/25 transition-all duration-300 relative group overflow-hidden"
               >
                 <GlowingEffect hoverLiquid breathe spread={30} borderWidth={1.5} proximity={40} glow />
                 <Github className="w-4 h-4" />

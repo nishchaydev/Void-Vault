@@ -36,7 +36,7 @@ function generateRedirectHTML(slug, dest, description) {
   <meta http-equiv="refresh" content="0; url=${fullDest}">
   <link rel="canonical" href="${fullDest}">
   <title>Void Vault — ${description}</title>
-  <style>body{font-family:system-ui,sans-serif;background:#050505;color:#e5e5e5;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}a{color:#38bdf8}</style>
+  <style>body{font-family:system-ui,sans-serif;background:#050505;color:#e5e5e5;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}a{color:#FF5600}</style>
 </head>
 <body>
   <p>Redirecting to <a href="${fullDest}">${description}</a>…</p>

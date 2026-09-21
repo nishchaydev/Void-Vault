@@ -25,7 +25,7 @@ export default function App() {
   const [bootDone, setBootDone] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-neutral-200 font-sans selection:bg-cyan-400/20 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#050505] text-neutral-200 font-sans selection:bg-orange-500/20 selection:text-orange-200">
       {!bootDone && <BootSplash onDone={() => setBootDone(true)} duration={2000} />}
       
       <ScrollProgress className="top-0" />

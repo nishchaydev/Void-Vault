@@ -35,13 +35,13 @@ export default function ResearchStandards() {
   return (
     <section id="research" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             09 — EMPIRICAL FOUNDATIONS & LITERATURE COMPENDIUM
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -58,7 +58,7 @@ export default function ResearchStandards() {
             onClick={() => setActiveTab("papers")}
             className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
               activeTab === "papers"
-                ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/10'
+                ? 'bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-lg shadow-orange-500/10'
                 : 'bg-white/[0.03] text-neutral-400 border border-white/[0.08] hover:text-white'
             }`}
           >
@@ -68,7 +68,7 @@ export default function ResearchStandards() {
             onClick={() => setActiveTab("dossiers")}
             className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
               activeTab === "dossiers"
-                ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/10'
+                ? 'bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-lg shadow-orange-500/10'
                 : 'bg-white/[0.03] text-neutral-400 border border-white/[0.08] hover:text-white'
             }`}
           >
@@ -78,7 +78,7 @@ export default function ResearchStandards() {
             onClick={() => setActiveTab("standards")}
             className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
               activeTab === "standards"
-                ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/10'
+                ? 'bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-lg shadow-orange-500/10'
                 : 'bg-white/[0.03] text-neutral-400 border border-white/[0.08] hover:text-white'
             }`}
           >
@@ -95,7 +95,7 @@ export default function ResearchStandards() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by author, paper title, standard (e.g., USENIX, BGC, BSA 63, Garfinkel)..."
-              className="w-full pl-11 pr-4 py-2.5 rounded-full bg-white/[0.02] border border-white/[0.08] text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-cyan-500/50 transition-colors backdrop-blur-md"
+              className="w-full pl-11 pr-4 py-2.5 rounded-full bg-white/[0.02] border border-white/[0.08] text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500/50 transition-colors backdrop-blur-md"
             />
             {searchQuery && (
               <button
@@ -139,7 +139,7 @@ export default function ResearchStandards() {
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-mono uppercase font-semibold text-cyan-400 px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-800/40">
+                      <span className="text-[10px] font-mono uppercase font-semibold text-orange-500 px-2 py-0.5 rounded bg-orange-950/40 border border-orange-800/40">
                         {paper.pillar}
                       </span>
                       <span className="text-[10px] font-mono text-neutral-500">
@@ -147,7 +147,7 @@ export default function ResearchStandards() {
                       </span>
                     </div>
 
-                    <h3 className="text-sm sm:text-base font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors leading-snug">
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1 group-hover:text-orange-300 transition-colors leading-snug">
                       {paper.title}
                     </h3>
 
@@ -160,7 +160,7 @@ export default function ResearchStandards() {
                     </p>
 
                     <p className="text-xs text-neutral-300 leading-relaxed font-light bg-white/[0.02] p-3 rounded-xl border border-white/[0.04]">
-                      <span className="text-cyan-400 font-medium font-mono text-[10px] uppercase block mb-1">Architectural Relevance:</span>
+                      <span className="text-orange-500 font-medium font-mono text-[10px] uppercase block mb-1">Architectural Relevance:</span>
                       {paper.relevance}
                     </p>
                   </div>
@@ -170,7 +170,7 @@ export default function ResearchStandards() {
                       href={paper.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-orange-500 hover:text-orange-300 transition-colors"
                     >
                       <span>Read Original Paper</span>
                       <ExternalLink className="w-3 h-3" />
@@ -191,13 +191,13 @@ export default function ResearchStandards() {
         {/* TAB 2: 24 DEFENSE DOSSIERS */}
         {activeTab === "dossiers" && (
           <div>
-            <div className="p-4 rounded-xl bg-cyan-950/20 border border-cyan-800/30 flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+            <div className="p-4 rounded-xl bg-orange-950/20 border border-orange-800/30 flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-3">
-                <FolderArchive className="w-6 h-6 text-cyan-400 flex-shrink-0" />
+                <FolderArchive className="w-6 h-6 text-orange-500 flex-shrink-0" />
                 <div>
                   <h4 className="text-sm font-bold text-white">24 Thematic Defense Dossiers in Repository</h4>
                   <p className="text-xs text-neutral-400">
-                    Surveyed across 800+ academic papers in IEEE S&P, USENIX Security, ACM CCS, and NDSS. Located in <code className="text-cyan-300">research/anti-piracy/</code>.
+                    Surveyed across 800+ academic papers in IEEE S&P, USENIX Security, ACM CCS, and NDSS. Located in <code className="text-orange-300">research/anti-piracy/</code>.
                   </p>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function ResearchStandards() {
                 href="https://github.com/nishchaydev/sih2026/tree/main/research/anti-piracy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-mono whitespace-nowrap inline-flex items-center gap-1.5"
+                className="px-4 py-2 rounded-full bg-orange-500/20 hover:bg-orange-500/30 text-orange-300 border border-orange-500/40 text-xs font-mono whitespace-nowrap inline-flex items-center gap-1.5"
               >
                 <span>Browse Directory</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -222,7 +222,7 @@ export default function ResearchStandards() {
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-mono text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-950/40 border border-cyan-800/40">
+                      <span className="text-[10px] font-mono text-orange-500 font-bold px-2 py-0.5 rounded bg-orange-950/40 border border-orange-800/40">
                         DOSSIER {dossier.id}
                       </span>
                       <span className="text-[10px] font-mono text-neutral-500">
@@ -230,7 +230,7 @@ export default function ResearchStandards() {
                       </span>
                     </div>
 
-                    <h3 className="text-sm font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-sm font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
                       {dossier.title}
                     </h3>
 
@@ -244,7 +244,7 @@ export default function ResearchStandards() {
                       href={`https://github.com/nishchaydev/sih2026/blob/main/research/anti-piracy/${dossier.file}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 font-mono transition-colors"
+                      className="inline-flex items-center gap-1 text-xs text-orange-500 hover:text-orange-300 font-mono transition-colors"
                     >
                       <span>{dossier.file}</span>
                       <ArrowUpRight className="w-3 h-3" />
@@ -268,7 +268,7 @@ export default function ResearchStandards() {
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-bold text-cyan-400 px-2.5 py-1 rounded bg-cyan-950/60 border border-cyan-800/50">
+                    <span className="text-xs font-mono font-bold text-orange-500 px-2.5 py-1 rounded bg-orange-950/60 border border-orange-800/50">
                       {std.code}
                     </span>
                     <span className="text-[10px] font-mono text-neutral-500 uppercase">

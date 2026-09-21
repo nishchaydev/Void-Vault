@@ -9,7 +9,7 @@
   <defs>
     <linearGradient id="leftGrad" x1="4" y1="14" x2="42" y2="98" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#E2E8F0" />
-      <stop offset="100%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#FF5600" />
     </linearGradient>
     <linearGradient id="rightGrad" x1="96" y1="14" x2="58" y2="98" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#94A3B8" />

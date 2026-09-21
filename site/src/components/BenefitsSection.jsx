@@ -53,7 +53,7 @@ export default function BenefitsSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             14 — MULTI-DIMENSIONAL IMPACT
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -71,14 +71,14 @@ export default function BenefitsSection() {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-[#0C121D] border border-slate-800/90 hover:border-cyan-500/40 transition-colors flex flex-col justify-between shadow-xl"
+                className="p-6 rounded-2xl bg-[#0C121D] border border-slate-800/90 hover:border-orange-500/40 transition-colors flex flex-col justify-between shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 rounded-xl bg-slate-800 text-cyan-400">
+                    <div className="p-2.5 rounded-xl bg-slate-800 text-orange-500">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/60">
+                    <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-800/60">
                       {benefit.tag}
                     </span>
                   </div>

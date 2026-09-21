@@ -17,13 +17,13 @@ export default function GovernmentImpact() {
   return (
     <section id="impact" className="py-20 md:py-28 border-t border-white/[0.04] bg-[#050505] relative overflow-hidden">
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase">
+          <span className="text-xs font-mono font-semibold tracking-widest text-orange-500 uppercase">
             13 — STRATEGIC NATIONAL RESILIENCE & DEFENSE USE CASES
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4 tracking-tight">
@@ -41,11 +41,11 @@ export default function GovernmentImpact() {
           <div className="relative z-10">
             <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-6 border-b border-white/[0.06]">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-cyan-950/70 text-cyan-400 border border-cyan-800/50">
+                <div className="p-2.5 rounded-xl bg-orange-950/70 text-orange-500 border border-orange-800/50">
                   <Building2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-400 block">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-orange-500 block">
                     {ntroHighlight.badge}
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide">
@@ -53,7 +53,7 @@ export default function GovernmentImpact() {
                   </h3>
                 </div>
               </div>
-              <span className="text-xs font-mono text-cyan-300 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+              <span className="text-xs font-mono text-orange-300 bg-white/5 px-3 py-1 rounded-full border border-white/10">
                 Sovereign Cyber Tooling
               </span>
             </div>
@@ -66,8 +66,8 @@ export default function GovernmentImpact() {
               {ntroHighlight.capabilities.map((cap, idx) => (
                 <div key={idx} className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between">
                   <div>
-                    <h4 className="text-xs font-bold text-cyan-200 mb-1.5 flex items-center gap-1.5 font-mono">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <h4 className="text-xs font-bold text-orange-200 mb-1.5 flex items-center gap-1.5 font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                       {cap.title}
                     </h4>
                     <p className="text-[11px] text-neutral-300 leading-relaxed font-light">
@@ -101,7 +101,7 @@ export default function GovernmentImpact() {
 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 rounded-xl border border-white/10 bg-white/5 text-cyan-300">
+                    <div className="p-2.5 rounded-xl border border-white/10 bg-white/5 text-orange-300">
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-mono text-neutral-500 uppercase">
@@ -109,7 +109,7 @@ export default function GovernmentImpact() {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
                     {pillar.title}
                   </h3>
 
@@ -127,7 +127,7 @@ export default function GovernmentImpact() {
                   </div>
                   <div className="flex items-center justify-between text-neutral-400">
                     <span>Outcome:</span>
-                    <span className="text-cyan-300 font-semibold truncate max-w-[170px] text-right">
+                    <span className="text-orange-300 font-semibold truncate max-w-[170px] text-right">
                       {pillar.outcome}
                     </span>
                   </div>

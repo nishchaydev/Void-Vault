@@ -111,8 +111,8 @@ export function BootSplash({ onDone, duration = 2800 }) {
         <ShaderAnimation
           className="h-full w-full"
           intensity={1.25}
-          warm={[0.0, 0.85, 1.0]}
-          cool={[0.0, 0.65, 0.80]}
+          warm={[1.0, 0.337, 0.0]}
+          cool={[0.72, 0.15, 0.0]}
           reducedMotion={reduced}
         />
       </div>
@@ -148,7 +148,7 @@ export function BootSplash({ onDone, duration = 2800 }) {
         <button
           onClick={finishEarly}
           type="button"
-          className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-neutral-400 hover:text-white border border-white/10 hover:border-cyan-500/40 text-xs font-mono transition-all duration-200 cursor-pointer shadow-lg"
+          className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-neutral-400 hover:text-white border border-white/10 hover:border-orange-500/40 text-xs font-mono transition-all duration-200 cursor-pointer shadow-lg"
         >
           <span>Skip Boot</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-neutral-300 font-mono">ESC</span>
@@ -160,10 +160,10 @@ export function BootSplash({ onDone, duration = 2800 }) {
         
         {/* Animated Brand Mark / Emblem */}
         <div className="relative mb-6">
-          <div className="absolute -inset-4 bg-cyan-500/20 rounded-full blur-2xl animate-pulse" />
-          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-b from-[#0e1726] to-[#050911] border border-cyan-500/30 flex items-center justify-center shadow-2xl shadow-cyan-950/80">
+          <div className="absolute -inset-4 bg-orange-500/20 rounded-full blur-2xl animate-pulse" />
+          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-b from-[#1f1610] to-[#120c08] border border-orange-500/30 flex items-center justify-center shadow-2xl shadow-orange-950/80">
             <svg
-              className="w-9 h-9 text-cyan-400 drop-shadow-[0_0_12px_rgba(6,182,212,0.6)]"
+              className="w-9 h-9 text-orange-500 drop-shadow-[0_0_12px_rgba(255, 86, 0,0.6)]"
               viewBox="0 0 40 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ export function BootSplash({ onDone, duration = 2800 }) {
               />
               <path
                 d="M13 8L20 20L27 8H22L20 12L18 8H13Z"
-                fill="#38bdf8"
+                fill="#FF5600"
                 opacity="0.9"
               />
             </svg>
@@ -203,9 +203,9 @@ export function BootSplash({ onDone, duration = 2800 }) {
         {/* Orbit-style glowing accent underline */}
         <div className="relative w-48 sm:w-64 h-[2px] mx-auto mb-6 overflow-hidden rounded-full">
           <div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent"
             style={{
-              boxShadow: '0 0 16px rgba(6, 182, 212, 0.9)',
+              boxShadow: '0 0 16px rgba(255, 86, 0, 0.9)',
               animation: reduced
                 ? undefined
                 : 'bootUnderlineExpand 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both',
@@ -222,7 +222,7 @@ export function BootSplash({ onDone, duration = 2800 }) {
               : 'bootLetterFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both'
           }}
         >
-          <span className="text-cyan-400">SIH 2026 PS-26149</span>
+          <span className="text-orange-500">SIH 2026 PS-26149</span>
           <span className="mx-2 text-white/20">•</span>
           <span>NTRO DEFENSE SPEC</span>
         </div>
@@ -237,10 +237,10 @@ export function BootSplash({ onDone, duration = 2800 }) {
           }}
         >
           <div className="flex items-center justify-between text-[11px] font-mono">
-            <div className="flex items-center gap-2 text-cyan-400">
+            <div className="flex items-center gap-2 text-orange-500">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500" />
               </span>
               <span className="font-semibold tracking-wider">
                 {TELEMETRY_LOGS[logIndex].step}
@@ -258,7 +258,7 @@ export function BootSplash({ onDone, duration = 2800 }) {
           {/* Micro Progress Bar */}
           <div className="h-1 w-full bg-white/[0.06] rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 transition-all duration-75 rounded-full"
+              className="h-full bg-gradient-to-r from-orange-500 to-orange-500 transition-all duration-75 rounded-full"
               style={{ width: `${Math.min(100, progress)}%` }}
             />
           </div>

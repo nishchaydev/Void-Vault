@@ -14,9 +14,9 @@
   --color-steel-400: #94A3B8;
   --color-steel-200: #E2E8F0;
 
-  --color-accent-blue: #38BDF8;
-  --color-accent-teal: #14B8A6;
-  --color-accent-emerald: #10B981;
+  --color-accent-brand: #FF5600;
+  --color-accent-hover: #E04C00;
+  --color-accent-active: #B83F00;
   --color-accent-amber: #F59E0B;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -24,8 +24,11 @@
 }
 
 :root {
-  --accent: #38bdf8;
-  --accent-soft: rgba(56, 189, 248, 0.15);
+  --accent: #FF5600;
+  --accent-soft: rgba(255, 86, 0, 0.14);
+  --brand: #FF5600;
+  --brand-hover: #E04C00;
+  --brand-active: #B83F00;
   --ge-angle: 0deg;
   --ge-spread: 40;
   --ge-active: 0;
@@ -43,11 +46,16 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #050505;
-    color: #E2E8F0;
+    background-color: #0c0d0e;
+    color: #f3f3f1;
     overflow-x: hidden;
-    selection-background-color: rgba(56, 189, 248, 0.2);
+    selection-background-color: rgba(255, 86, 0, 0.25);
     selection-color: #ffffff;
+    background-image:
+      radial-gradient(1100px 800px at 8% -10%, color-mix(in oklab, #ff5600 16%, transparent), transparent 60%),
+      radial-gradient(900px 700px at 105% 110%, color-mix(in oklab, #b83f00 12%, transparent), transparent 60%),
+      radial-gradient(700px 500px at 50% 120%, color-mix(in oklab, #e04c00 10%, transparent), transparent 65%);
+    background-attachment: fixed;
   }
 }
 
@@ -107,5 +115,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #38BDF8;
+  background: #FF5600;
 }

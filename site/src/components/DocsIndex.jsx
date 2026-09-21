@@ -9,7 +9,7 @@ export function DocsIndex() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[1,2,3,4,5,6].map(i => (
           <a key={i} href="#" className="flex items-center gap-3 p-3 rounded-lg border border-white/10 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group">
-            <FileText className="w-5 h-5 text-neutral-500 group-hover:text-cyan-400" />
+            <FileText className="w-5 h-5 text-neutral-500 group-hover:text-orange-500" />
             <div>
               <div className="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">0{i}-document-name.md</div>
               <div className="text-xs text-neutral-500">v1.0 • Sep 2026</div>
