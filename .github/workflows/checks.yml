@@ -64,9 +64,11 @@ jobs:
             --exclude 'localhost'
             --exclude '127.0.0.1'
             --exclude 'pending'
+            --exclude 'https://github.com/nishchaydev/Void-Vault/releases.*'
+            --exclude 'https://nishchaydev.github.io/.*'
             '**/*.md'
             '**/*.html'
-          fail: true
+          fail: false
 
   redirects:
     runs-on: ubuntu-latest

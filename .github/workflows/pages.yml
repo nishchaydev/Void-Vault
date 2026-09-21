@@ -48,6 +48,10 @@ jobs:
           cp -r go site/dist/go || true
           cp README.md site/dist/README.md || true
           cp CHANGELOG.md site/dist/CHANGELOG.md || true
+          cp robots.txt site/dist/robots.txt || true
+          cp LICENSE site/dist/LICENSE || true
+          cp CITATION.cff site/dist/CITATION.cff || true
+          cp SECURITY.md site/dist/SECURITY.md || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
