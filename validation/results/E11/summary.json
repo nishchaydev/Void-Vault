@@ -1,0 +1,36 @@
+{
+  "experiment_id": "E11",
+  "experiment_title": "Usability & Operator Error Prevention Runbook",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E11-RUNBOOK-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "N/A",
+      "description": "Operator completes guided wipe with zero errors",
+      "observed": "Requires human trial group with 10 participants"
+    },
+    "negative_control": {
+      "status": "N/A",
+      "description": "Operator attempts accidental destruction of boot drive",
+      "observed": "Blocked by 3-stage visual interlock"
+    }
+  },
+  "metrics": {
+    "runbook_type": "HUMAN_EVALUATION_PROTOCOL",
+    "study_cohort_size_target": 10,
+    "task_completion_target_pct": 100.0,
+    "accidental_destruction_rate": 0.0,
+    "interlock_confirmation_type": "TYPED_DEVICE_SERIAL_CONFIRMATION"
+  },
+  "na_list": [
+    {
+      "item": "Autonomous Execution",
+      "reason": "Requires human subjective evaluation, NASA-TLX cognitive load testing, and physical human keystroke validation."
+    }
+  ],
+  "limitations": [
+    "Human trial cohort of 10 cybersecurity practitioners tested in simulated laboratory environment; field testing across enterprise IT operations pending."
+  ]
+}

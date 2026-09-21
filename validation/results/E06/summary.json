@@ -1,0 +1,45 @@
+{
+  "experiment_id": "E06",
+  "experiment_title": "System Performance & Resource Consumption Profile",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E06-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "I/O throughput reaches at least 80% of raw disk interface speed",
+      "observed": "Measured Direct I/O throughput: 462.4 MB/s (baseline fio: 489.1 MB/s, 94.5% efficiency)"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Memory footprint does not leak or exceed 250 MB RSS limit during sustained 50GB pass",
+      "observed": "Peak Resident Working Set (RSS): 142.8 MB (stable, 0 unmanaged memory leaks)"
+    }
+  },
+  "metrics": {
+    "direct_io_write_mb_s": 462.4,
+    "verification_sha256_mb_s": 521.8,
+    "peak_rss_mb": 142.8,
+    "cpu_utilization_avg_pct": 28.4,
+    "thread_count": 8,
+    "block_size_benchmarks": {
+      "64KB": {
+        "throughput_mb_s": 312.1,
+        "iops": 4993
+      },
+      "1MB": {
+        "throughput_mb_s": 462.4,
+        "iops": 462
+      },
+      "4MB": {
+        "throughput_mb_s": 478.2,
+        "iops": 119
+      }
+    }
+  },
+  "na_list": [],
+  "limitations": [
+    "Throughput was measured under Windows 11 Hyper-V synthetic SCSI bus; bare-metal PCIe Gen4 NVMe Direct DMA write speeds will vary depending on PCIe lane topology."
+  ]
+}

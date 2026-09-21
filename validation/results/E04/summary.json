@@ -1,0 +1,73 @@
+{
+  "experiment_id": "E04",
+  "experiment_title": "Ledger Tamper Resistance Matrix",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E04-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.222833+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "Unmodified sample session passes verification",
+      "observed": "Ledger integrity verified successfully"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Single-bit flip triggers immediate cryptographic invalidation",
+      "observed": "Hash mismatch detected"
+    }
+  },
+  "metrics": {
+    "total_attacks_tested": 7,
+    "attacks_detected": 7,
+    "detection_rate_pct": 100.0,
+    "attack_results": [
+      {
+        "attack_id": "ATK-01",
+        "description": "Single-bit flip in entry payload",
+        "detected": true,
+        "verifier_output": "Hash mismatch at index 2: entry altered"
+      },
+      {
+        "attack_id": "ATK-02",
+        "description": "Deletion of intermediate record",
+        "detected": true,
+        "verifier_output": "Broken chain link at index 2: prev_hash mismatch"
+      },
+      {
+        "attack_id": "ATK-03",
+        "description": "Transposition of adjacent records",
+        "detected": true,
+        "verifier_output": "Broken chain link at index 1: prev_hash mismatch"
+      },
+      {
+        "attack_id": "ATK-04",
+        "description": "Tail truncation",
+        "detected": true,
+        "verifier_output": "Merkle root mismatch: expected 267f3da439af52186a52092904a5aee8af6da85ce340803024a33ae8f5f14974, computed 61fe8e5e737cb19598052fab4cfd84383b063bc3bf9e99d4e684d5f0cac754c2"
+      },
+      {
+        "attack_id": "ATK-05",
+        "description": "Replay record insertion",
+        "detected": true,
+        "verifier_output": "Broken chain link at index 3: prev_hash mismatch"
+      },
+      {
+        "attack_id": "ATK-06",
+        "description": "Full chain recomputation vs session Merkle root",
+        "detected": true,
+        "verifier_output": "Merkle root mismatch: expected 267f3da439af52186a52092904a5aee8af6da85ce340803024a33ae8f5f14974, computed 68b973211f565cd906b38d09f9e087266e6e68f6889632fce0d1c26868ab8675"
+      },
+      {
+        "attack_id": "ATK-07",
+        "description": "Certificate payload substitution",
+        "detected": true,
+        "verifier_output": "Hash mismatch at index 5: entry altered"
+      }
+    ]
+  },
+  "na_list": [],
+  "limitations": [
+    "Purely offline ledger without external blockchain anchoring cannot detect an attacker who replaces both the entire log file and the session Merkle root file simultaneously; external anchoring (MeitY NBF) is planned to address this."
+  ]
+}

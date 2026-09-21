@@ -1,0 +1,32 @@
+{
+  "experiment_id": "E09",
+  "experiment_title": "Module 2 Granular Shredder Anti-Forensic Residual Traces",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E09-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "Target file extents, slack space, and Alternate Data Streams wiped cleanly",
+      "observed": "0 bytes surviving across primary stream and 3 Alternate Data Streams"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Neighboring unaffected cluster data preserved without collateral corruption",
+      "observed": "Adjacent files on volume remain 100% bit-identical (SHA-256 verified)"
+    }
+  },
+  "metrics": {
+    "test_artifacts_count": 4,
+    "primary_extents_wiped": "100%",
+    "cluster_slack_bytes_sanitized": 3192,
+    "alternate_data_streams_wiped": 3,
+    "mft_resident_data_purged": true,
+    "usn_journal_record_status": "FLUSHED"
+  },
+  "na_list": [],
+  "limitations": [
+    "Active Volume Shadow Copies (VSS) retain historical snapshots of files if created prior to shredding. Void Vault issues a prominent warning requiring operator authorization to delete VSS shadow copies."
+  ]
+}

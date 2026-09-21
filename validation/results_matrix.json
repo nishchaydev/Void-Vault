@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-09-21T11:40:14.140162+00:00",
+  "build_tag": "v1.0-sih-r2",
+  "experiments_count": 12,
+  "experiments": [
+    {
+      "experiment_id": "E01",
+      "title": "Closed-Loop Carve-Back Verification",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.457704+00:00",
+      "summary_path": "validation/results/E01/summary.json"
+    },
+    {
+      "experiment_id": "E02",
+      "title": "NIST CFTT Forensic Media Preparation Alignment",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E02/summary.json"
+    },
+    {
+      "experiment_id": "E03",
+      "title": "Independent Carving Benchmark & Tool Comparison",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.457704+00:00",
+      "summary_path": "validation/results/E03/summary.json"
+    },
+    {
+      "experiment_id": "E04",
+      "title": "Ledger Tamper Resistance Matrix",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.222833+00:00",
+      "summary_path": "validation/results/E04/summary.json"
+    },
+    {
+      "experiment_id": "E05",
+      "title": "Real Storage Devices Hardware Verification Runbook",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "N/A",
+      "negative_control": "N/A",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E05/summary.json"
+    },
+    {
+      "experiment_id": "E06",
+      "title": "System Performance & Resource Consumption Profile",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E06/summary.json"
+    },
+    {
+      "experiment_id": "E07",
+      "title": "Classifier Confidence Calibration & ECE",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.337103+00:00",
+      "summary_path": "validation/results/E07/summary.json"
+    },
+    {
+      "experiment_id": "E08",
+      "title": "File Type Classification & Signature Recognition",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.337103+00:00",
+      "summary_path": "validation/results/E08/summary.json"
+    },
+    {
+      "experiment_id": "E09",
+      "title": "Module 2 Granular Shredder Anti-Forensic Residual Traces",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E09/summary.json"
+    },
+    {
+      "experiment_id": "E10",
+      "title": "Robustness, Fault-Tolerance & Supply Chain Security",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "PASS",
+      "negative_control": "PASS",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E10/summary.json"
+    },
+    {
+      "experiment_id": "E11",
+      "title": "Usability & Operator Error Prevention Runbook",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "N/A",
+      "negative_control": "N/A",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E11/summary.json"
+    },
+    {
+      "experiment_id": "E12",
+      "title": "External Forensic Auditor Verification Pack",
+      "build_tag": "v1.0-sih-r2",
+      "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+      "positive_control": "N/A",
+      "negative_control": "N/A",
+      "timestamp": "2026-09-21T11:40:14.140162+00:00",
+      "summary_path": "validation/results/E12/summary.json"
+    }
+  ]
+}

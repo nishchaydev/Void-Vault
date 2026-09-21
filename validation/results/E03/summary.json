@@ -1,0 +1,58 @@
+{
+  "experiment_id": "E03",
+  "experiment_title": "Independent Carving Benchmark & Tool Comparison",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E03-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.457704+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "Baseline known-file corpus correctly carved by PhotoRec and Foremost",
+      "observed": "PhotoRec recovered 961/1000 files"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Random noise sector stream does not produce valid recovered files",
+      "observed": "All carvers returned 0 files on pseudorandom test block"
+    }
+  },
+  "metrics": {
+    "eval_corpus_size_files": 1000,
+    "file_types_tested": 10,
+    "tool_comparisons": {
+      "Void_Vault_Module_3": {
+        "recall": 0.984,
+        "precision": 0.991,
+        "f1": 0.987,
+        "fragmented_file_recovery_pct": 91.2,
+        "scan_speed_mb_s": 284.5
+      },
+      "PhotoRec_7_2": {
+        "recall": 0.961,
+        "precision": 0.945,
+        "f1": 0.953,
+        "fragmented_file_recovery_pct": 54.0,
+        "scan_speed_mb_s": 142.1
+      },
+      "Scalpel_2_0": {
+        "recall": 0.923,
+        "precision": 0.91,
+        "f1": 0.916,
+        "fragmented_file_recovery_pct": 42.5,
+        "scan_speed_mb_s": 188.0
+      },
+      "Foremost_1_5_7": {
+        "recall": 0.895,
+        "precision": 0.884,
+        "f1": 0.889,
+        "fragmented_file_recovery_pct": 36.1,
+        "scan_speed_mb_s": 165.3
+      }
+    }
+  },
+  "na_list": [],
+  "limitations": [
+    "Benchmark uses synthetic 1,000 file dataset; real-world heavily fragmented file systems with >5 fragments per file may have lower reassembly rates."
+  ]
+}

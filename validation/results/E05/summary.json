@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E05",
+  "experiment_title": "Real Storage Devices Hardware Verification Runbook",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E05-RUNBOOK-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "N/A",
+      "description": "Physical disk power-cycle post-wipe audit (SMART attributes check)",
+      "observed": "Protocol requires dedicated physical test bench and operator hardware keys"
+    },
+    "negative_control": {
+      "status": "N/A",
+      "description": "Host OS drive isolation check",
+      "observed": "Hardware write-blocker attached during readback audit"
+    }
+  },
+  "metrics": {
+    "runbook_type": "HUMAN_OPERATOR_REQUIRED",
+    "supported_device_classes": [
+      "NVMe Gen3/Gen4 SSD",
+      "SATA 6Gbps SSD (Trim/CryptoErase)",
+      "SATA HDD (512e/4Kn Magnetic Media)"
+    ],
+    "safety_verification": "HARDWARE_AIRGAP_REQUIRED"
+  },
+  "na_list": [
+    {
+      "item": "Automated Agent Execution",
+      "reason": "Rule 1: Destructive physical hardware operations are strictly prohibited in automated CI/agent pipelines to prevent accidental host data destruction."
+    }
+  ],
+  "limitations": [
+    "Requires physical machine with hardware NVMe controller supporting Sanitize (Crypto Erase / Block Erase) and ATA Security Feature Set."
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "experiment_id": "E08",
+  "experiment_title": "File Type Classification & Signature Recognition",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E08-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.337103+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "Standard unfragmented files correctly identified",
+      "observed": "Macro F1: 0.9601, Accuracy: 96.00%"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Pseudorandom noise clusters do not trigger false positive signatures",
+      "observed": "Zero false classifications on CSPRNG streams (entropy > 7.99)"
+    }
+  },
+  "metrics": {
+    "total_samples": 1000,
+    "overall_accuracy": 0.96,
+    "macro_precision": 0.9608,
+    "macro_recall": 0.96,
+    "macro_f1": 0.9601,
+    "per_class_breakdown": {
+      "JPEG": {
+        "samples": 100,
+        "true_positive": 100,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "PNG": {
+        "samples": 100,
+        "true_positive": 97,
+        "false_positive": 2,
+        "false_negative": 3,
+        "precision": 0.9798,
+        "recall": 0.97,
+        "f1_score": 0.9749
+      },
+      "PDF": {
+        "samples": 100,
+        "true_positive": 97,
+        "false_positive": 8,
+        "false_negative": 3,
+        "precision": 0.9238,
+        "recall": 0.97,
+        "f1_score": 0.9463
+      },
+      "ZIP": {
+        "samples": 100,
+        "true_positive": 95,
+        "false_positive": 10,
+        "false_negative": 5,
+        "precision": 0.9048,
+        "recall": 0.95,
+        "f1_score": 0.9268
+      },
+      "DOCX": {
+        "samples": 100,
+        "true_positive": 95,
+        "false_positive": 8,
+        "false_negative": 5,
+        "precision": 0.9223,
+        "recall": 0.95,
+        "f1_score": 0.936
+      },
+      "XLSX": {
+        "samples": 100,
+        "true_positive": 93,
+        "false_positive": 6,
+        "false_negative": 7,
+        "precision": 0.9394,
+        "recall": 0.93,
+        "f1_score": 0.9347
+      },
+      "MP3": {
+        "samples": 100,
+        "true_positive": 96,
+        "false_positive": 2,
+        "false_negative": 4,
+        "precision": 0.9796,
+        "recall": 0.96,
+        "f1_score": 0.9697
+      },
+      "MP4": {
+        "samples": 100,
+        "true_positive": 95,
+        "false_positive": 2,
+        "false_negative": 5,
+        "precision": 0.9794,
+        "recall": 0.95,
+        "f1_score": 0.9645
+      },
+      "TEXT": {
+        "samples": 100,
+        "true_positive": 92,
+        "false_positive": 2,
+        "false_negative": 8,
+        "precision": 0.9787,
+        "recall": 0.92,
+        "f1_score": 0.9485
+      },
+      "PE_EXE": {
+        "samples": 100,
+        "true_positive": 100,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      }
+    },
+    "confusion_matrix": {
+      "JPEG": {
+        "JPEG": 100,
+        "PNG": 0,
+        "PDF": 0,
+        "ZIP": 0,
+        "DOCX": 0,
+        "XLSX": 0,
+        "MP3": 0,
+        "MP4": 0,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "PNG": {
+        "JPEG": 0,
+        "PNG": 97,
+        "PDF": 0,
+        "ZIP": 0,
+        "DOCX": 1,
+        "XLSX": 1,
+        "MP3": 0,
+        "MP4": 1,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "PDF": {
+        "JPEG": 0,
+        "PNG": 1,
+        "PDF": 97,
+        "ZIP": 1,
+        "DOCX": 0,
+        "XLSX": 0,
+        "MP3": 1,
+        "MP4": 0,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "ZIP": {
+        "JPEG": 0,
+        "PNG": 0,
+        "PDF": 0,
+        "ZIP": 95,
+        "DOCX": 3,
+        "XLSX": 2,
+        "MP3": 0,
+        "MP4": 0,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "DOCX": {
+        "JPEG": 0,
+        "PNG": 0,
+        "PDF": 0,
+        "ZIP": 2,
+        "DOCX": 95,
+        "XLSX": 3,
+        "MP3": 0,
+        "MP4": 0,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "XLSX": {
+        "JPEG": 0,
+        "PNG": 0,
+        "PDF": 0,
+        "ZIP": 5,
+        "DOCX": 2,
+        "XLSX": 93,
+        "MP3": 0,
+        "MP4": 0,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "MP3": {
+        "JPEG": 0,
+        "PNG": 1,
+        "PDF": 0,
+        "ZIP": 0,
+        "DOCX": 2,
+        "XLSX": 0,
+        "MP3": 96,
+        "MP4": 1,
+        "TEXT": 0,
+        "PE_EXE": 0
+      },
+      "MP4": {
+        "JPEG": 0,
+        "PNG": 0,
+        "PDF": 0,
+        "ZIP": 2,
+        "DOCX": 0,
+        "XLSX": 0,
+        "MP3": 1,
+        "MP4": 95,
+        "TEXT": 2,
+        "PE_EXE": 0
+      },
+      "TEXT": {
+        "JPEG": 0,
+        "PNG": 0,
+        "PDF": 8,
+        "ZIP": 0,
+        "DOCX": 0,
+        "XLSX": 0,
+        "MP3": 0,
+        "MP4": 0,
+        "TEXT": 92,
+        "PE_EXE": 0
+      },
+      "PE_EXE": {
+        "JPEG": 0,
+        "PNG": 0,
+        "PDF": 0,
+        "ZIP": 0,
+        "DOCX": 0,
+        "XLSX": 0,
+        "MP3": 0,
+        "MP4": 0,
+        "TEXT": 0,
+        "PE_EXE": 100
+      }
+    }
+  },
+  "na_list": [],
+  "limitations": [
+    "Encrypted zip archives without unencrypted local file headers cannot distinguish nested DOCX from raw ZIP containers without password decryption keys."
+  ]
+}

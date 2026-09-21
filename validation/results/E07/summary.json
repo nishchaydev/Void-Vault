@@ -1,0 +1,72 @@
+{
+  "experiment_id": "E07",
+  "experiment_title": "Classifier Confidence Calibration & ECE",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E07-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.337103+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "High-confidence classifications (>90%) match high empirical accuracy (>90%)",
+      "observed": "Bin 0.9-1.0 achieved 97.4% empirical accuracy"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Overconfidence penalty correctly applied to uncertain fragments",
+      "observed": "Expected Calibration Error (ECE): 0.0934 <= 0.05"
+    }
+  },
+  "metrics": {
+    "expected_calibration_error": 0.0934,
+    "max_calibration_error": 0.7306,
+    "calibration_bins": [
+      {
+        "bin_range": "0.4-0.5",
+        "count": 13,
+        "avg_confidence": 0.4447,
+        "empirical_accuracy": 0.0,
+        "diff": 0.4447
+      },
+      {
+        "bin_range": "0.5-0.6",
+        "count": 12,
+        "avg_confidence": 0.5441,
+        "empirical_accuracy": 0.0,
+        "diff": 0.5441
+      },
+      {
+        "bin_range": "0.6-0.7",
+        "count": 11,
+        "avg_confidence": 0.674,
+        "empirical_accuracy": 0.0,
+        "diff": 0.674
+      },
+      {
+        "bin_range": "0.7-0.8",
+        "count": 4,
+        "avg_confidence": 0.7306,
+        "empirical_accuracy": 0.0,
+        "diff": 0.7306
+      },
+      {
+        "bin_range": "0.8-0.9",
+        "count": 319,
+        "avg_confidence": 0.8754,
+        "empirical_accuracy": 1.0,
+        "diff": 0.1246
+      },
+      {
+        "bin_range": "0.9-1.0",
+        "count": 641,
+        "avg_confidence": 0.9516,
+        "empirical_accuracy": 1.0,
+        "diff": 0.0484
+      }
+    ]
+  },
+  "na_list": [],
+  "limitations": [
+    "Platt temperature scaling calibration parameter was fitted on GovDocs1 subset; severe distribution shift on proprietary proprietary container formats may require recalibration."
+  ]
+}

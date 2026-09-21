@@ -1,0 +1,76 @@
+{
+  "experiment_id": "E02",
+  "experiment_title": "NIST CFTT Forensic Media Preparation Alignment",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E02-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "FMP-01 full drive 0x00 pattern overwrite succeeds and verifies",
+      "observed": "100% of addressable sectors read back 0x00"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "FMP-06 boot disk target rejected without modifying sectors",
+      "observed": "Attempt to sanitize C: blocked by hardcoded volume interlock"
+    }
+  },
+  "metrics": {
+    "test_cases_total": 7,
+    "executable_virtual_cases": 5,
+    "passed_virtual_cases": 5,
+    "hardware_na_cases": 2,
+    "test_results": [
+      {
+        "case": "FMP-01",
+        "name": "Zero-fill addressable space",
+        "status": "PASS"
+      },
+      {
+        "case": "FMP-02",
+        "name": "Random pattern addressable space",
+        "status": "PASS"
+      },
+      {
+        "case": "FMP-03",
+        "name": "Multi-pass overwrite (DoD 3-pass)",
+        "status": "PASS"
+      },
+      {
+        "case": "FMP-04",
+        "name": "Host Protected Area (HPA)",
+        "status": "N/A"
+      },
+      {
+        "case": "FMP-05",
+        "name": "Device Configuration Overlay (DCO)",
+        "status": "N/A"
+      },
+      {
+        "case": "FMP-06",
+        "name": "Boot disk lockout interlock",
+        "status": "PASS"
+      },
+      {
+        "case": "FMP-07",
+        "name": "Interrupted wipe recovery",
+        "status": "PASS"
+      }
+    ]
+  },
+  "na_list": [
+    {
+      "item": "FMP-04 (HPA)",
+      "reason": "Virtual disk controller lacks ATA SET MAX ADDRESS implementation."
+    },
+    {
+      "item": "FMP-05 (DCO)",
+      "reason": "Virtual SCSI/IDE bus emulated in hypervisor does not implement DCO command set."
+    }
+  ],
+  "limitations": [
+    "Test suite is a self-administered test suite aligned with NIST CFTT methodology; it does not constitute formal certification by NIST."
+  ]
+}

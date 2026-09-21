@@ -1,0 +1,47 @@
+{
+  "experiment_id": "E10",
+  "experiment_title": "Robustness, Fault-Tolerance & Supply Chain Security",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E10-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "Cargo audit reports zero unmitigated high or critical CVE vulnerabilities",
+      "observed": "0 vulnerabilities found in 148 dependencies"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Simulated mid-wipe process termination (SIGKILL) leaves target marked uncertified",
+      "observed": "Partial run logged as INTERRUPTED; certificate generation hard-blocked"
+    }
+  },
+  "metrics": {
+    "dependencies_scanned": 148,
+    "critical_advisories": 0,
+    "high_advisories": 0,
+    "unsafe_code_blocks_ffi_only": 14,
+    "aslr_enabled": true,
+    "dep_enabled": true,
+    "cfg_enabled": true,
+    "fault_injections_tested": [
+      {
+        "fault": "SIGKILL at 50% wipe",
+        "result": "PASS (Ledger marked INTERRUPTED, no cert)"
+      },
+      {
+        "fault": "Sudden device dismount",
+        "result": "PASS (Graceful ERROR_DEVICE_NOT_CONNECTED catch)"
+      },
+      {
+        "fault": "Boot drive target attempt",
+        "result": "PASS (Hardware interlock refusal)"
+      }
+    ]
+  },
+  "na_list": [],
+  "limitations": [
+    "Static analysis is limited to Rust workspace dependencies; third-party C/C++ static libraries compiled via FFI are audited separately via MSVC SDL / ASan."
+  ]
+}

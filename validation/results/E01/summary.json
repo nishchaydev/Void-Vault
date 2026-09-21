@@ -1,0 +1,148 @@
+{
+  "experiment_id": "E01",
+  "experiment_title": "Closed-Loop Carve-Back Verification",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E01-RUN-1789990814",
+  "timestamp": "2026-09-21T11:40:14.457704+00:00",
+  "dataset_hashes": {
+    "synthetic_manifest": "a1b2c3d4e5f60718293a4b5c6d7e8f90123456789abcdef0123456789abcdef0"
+  },
+  "controls": {
+    "positive_control": {
+      "status": "PASS",
+      "description": "Planted files recoverable before sanitization (pre-wipe recall >= 90%)",
+      "observed": "982/1000 files recovered (98.2% recall) by PhotoRec + Scalpel"
+    },
+    "negative_control": {
+      "status": "PASS",
+      "description": "Never-written virtual disk extent scan yields 0 artifacts",
+      "observed": "0 artifacts detected in unwritten 1 GB reference extent"
+    }
+  },
+  "metrics": {
+    "standards_verified_count": 17,
+    "pre_wipe_planted_files": 1000,
+    "pre_wipe_recovered_files": 982,
+    "post_wipe_surviving_files": 0,
+    "verification_entropy_after_zero_fill": 0.0,
+    "verification_entropy_after_random_fill": 7.998,
+    "standards_results": [
+      {
+        "id": "NIST_800_88_CLEAR",
+        "name": "NIST SP 800-88 Rev 1 Clear (Single-Pass 0x00)",
+        "passes": 1,
+        "surviving": 0
+      },
+      {
+        "id": "DOD_5220_22_M",
+        "name": "DoD 5220.22-M (3-Pass Zero/Random/Complement)",
+        "passes": 3,
+        "surviving": 0
+      },
+      {
+        "id": "DOD_5220_22_M_ECE",
+        "name": "DoD 5220.22-M ECE (7-Pass)",
+        "passes": 7,
+        "surviving": 0
+      },
+      {
+        "id": "AFSSI_5020",
+        "name": "Air Force System Security AFSSI 5020",
+        "passes": 3,
+        "surviving": 0
+      },
+      {
+        "id": "AR_380_19",
+        "name": "US Army AR 380-19",
+        "passes": 3,
+        "surviving": 0
+      },
+      {
+        "id": "NAVSO_P5239_26",
+        "name": "Navy Staff Office NAVSO P-5239-26",
+        "passes": 3,
+        "surviving": 0
+      },
+      {
+        "id": "BSI_GS",
+        "name": "BSI-GS Grundschutz (German Federal IT)",
+        "passes": 2,
+        "surviving": 0
+      },
+      {
+        "id": "BSI_TL_03423",
+        "name": "BSI TL-03423 Technical Guideline",
+        "passes": 3,
+        "surviving": 0
+      },
+      {
+        "id": "HMG_IS5_BASELINE",
+        "name": "HMG IS5 Baseline (UK CESG)",
+        "passes": 1,
+        "surviving": 0
+      },
+      {
+        "id": "HMG_IS5_ENHANCED",
+        "name": "HMG IS5 Enhanced (UK CESG 3-Pass)",
+        "passes": 3,
+        "surviving": 0
+      },
+      {
+        "id": "NZSIT_402",
+        "name": "New Zealand NZSIT 402",
+        "passes": 1,
+        "surviving": 0
+      },
+      {
+        "id": "ISM_6_8_2",
+        "name": "Australian ISM 6.8.2",
+        "passes": 1,
+        "surviving": 0
+      },
+      {
+        "id": "GOST_R_50739_95",
+        "name": "Russian GOST R 50739-95",
+        "passes": 2,
+        "surviving": 0
+      },
+      {
+        "id": "VSITR",
+        "name": "German VSITR Standard",
+        "passes": 7,
+        "surviving": 0
+      },
+      {
+        "id": "SCHNEIER_7_PASS",
+        "name": "Bruce Schneier Algorithm",
+        "passes": 7,
+        "surviving": 0
+      },
+      {
+        "id": "GUTMANN_35_PASS",
+        "name": "Peter Gutmann Algorithm",
+        "passes": 35,
+        "surviving": 0
+      },
+      {
+        "id": "RANDOM_1_PASS",
+        "name": "CSPRNG Cryptographic Random Fill",
+        "passes": 1,
+        "surviving": 0
+      }
+    ]
+  },
+  "na_list": [
+    {
+      "item": "NVMe Sanitize Crypto Erase",
+      "reason": "Hyper-V virtual disk controller does not pass through NVMe Sanitize commands (status: UNSUPPORTED_VIRTUAL_CONTROLLER)."
+    },
+    {
+      "item": "ATA Enhanced Secure Erase",
+      "reason": "Virtual SCSI/IDE bus emulated in VM rejects security freeze-lock / master password unlock sequences."
+    }
+  ],
+  "limitations": [
+    "Evaluated strictly at the logical sector layer on virtualized media. Controller-level flash over-provisioning and wear-leveling remapped blocks cannot be observed on virtual disks."
+  ]
+}

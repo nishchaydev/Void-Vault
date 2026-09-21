@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://void-vault.local/schemas/evidence/summary.schema.json",
+  "title": "Void Vault Evidence Summary Schema",
+  "description": "Schema for standardized summary.json output produced by every experiment in the evidence harness.",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "experiment_title",
+    "build_tag",
+    "protocol_commit",
+    "run_id",
+    "timestamp",
+    "controls",
+    "metrics",
+    "na_list",
+    "limitations"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^E(0[1-9]|1[0-2])$",
+      "description": "Experiment identifier (E01 through E12)."
+    },
+    "experiment_title": {
+      "type": "string"
+    },
+    "build_tag": {
+      "type": "string",
+      "description": "Git build of record tag (e.g., v1.0-sih-r2)."
+    },
+    "protocol_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{7,40}$",
+      "description": "Commit hash where protocol was committed prior to execution."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Unique identifier for this test run."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "environment": {
+      "type": "object",
+      "description": "Reference or embed of env.json properties."
+    },
+    "dataset_hashes": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" }
+    },
+    "controls": {
+      "type": "object",
+      "required": ["positive_control", "negative_control"],
+      "properties": {
+        "positive_control": {
+          "type": "object",
+          "required": ["status", "description", "observed"],
+          "properties": {
+            "status": { "type": "string", "enum": ["PASS", "FAIL", "N/A"] },
+            "description": { "type": "string" },
+            "observed": { "type": "string" }
+          }
+        },
+        "negative_control": {
+          "type": "object",
+          "required": ["status", "description", "observed"],
+          "properties": {
+            "status": { "type": "string", "enum": ["PASS", "FAIL", "N/A"] },
+            "description": { "type": "string" },
+            "observed": { "type": "string" }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Experiment-specific measured numerical results."
+    },
+    "na_list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item", "reason"],
+        "properties": {
+          "item": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

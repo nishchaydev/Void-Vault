@@ -1,0 +1,52 @@
+# Void Vault Evidence Harness — Dataset Manifest
+# Standardized datasets for experimental validation (E01 - E12)
+version: "1.0.0"
+updated_at: "2026-09-21"
+
+datasets:
+  synthetic-corpus-e01:
+    name: "Synthetic Closed-Loop 1000 Corpus"
+    description: "1,000 uniquely seeded files across 10 MIME types (JPEG, PNG, PDF, DOCX, XLSX, ZIP, MP3, MP4, TXT, EXE), 50 KB to 5 MB with embedded cryptographic canaries."
+    source_url: "local://evidence/harness/corpus_generator.py"
+    retrieval_date: "2026-09-21"
+    license: "CC0-1.0"
+    generator_seed: 146878
+    file_count: 1000
+    total_size_mb: 245.8
+    sha256_manifest: "evidence/datasets/synthetic_corpus_sha256.txt"
+
+  dfrws-2006:
+    name: "DFRWS 2006 Forensic Challenge"
+    description: "Standard memory and disk carving forensic challenge scenario including fragmented and out-of-order sectors."
+    source_url: "https://dfrws.org/wp-content/uploads/2006/07/dfrws-2006-challenge.zip"
+    retrieval_date: "2026-09-15"
+    license: "Research Use Only"
+    size_mb: 51.2
+    sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+  dfrws-2007:
+    name: "DFRWS 2007 Forensic Carving Challenge"
+    description: "Complex file carving challenge featuring JPEG, PDF, and ZIP bifragment gap anomalies."
+    source_url: "https://dfrws.org/wp-content/uploads/2007/07/dfrws-2007-challenge.zip"
+    retrieval_date: "2026-09-15"
+    license: "Research Use Only"
+    size_mb: 48.7
+    sha256: "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+
+  nist-cftt-media-prep:
+    name: "NIST CFTT Forensic Media Preparation Test Plan v2.0"
+    description: "National Institute of Standards and Technology Computer Forensics Tool Testing public test image suite for drive erasure and sanitization."
+    source_url: "https://www.cftt.nist.gov/media_prep.html"
+    retrieval_date: "2026-09-10"
+    license: "Public Domain (US Government Work)"
+    test_suite_version: "2.0"
+    sha256: "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+
+  govdocs1-selected-sample:
+    name: "GovDocs1 Forensic Corpus (Curated 1,800 File Benchmark)"
+    description: "Curated 1,800-file subset from the Digital Corpora GovDocs1 dataset (200 files per class across 9 target classes: Document, Image, Audio, Video, Archive, Executable, Web, Database, Unknown)."
+    source_url: "https://digitalcorpora.org/corpora/govdocs1"
+    retrieval_date: "2026-09-12"
+    license: "Public Domain / Creative Commons"
+    sample_size: 1800
+    sha256: "88d4266fd4e6338d13b845fcf289579d209c897823b9217da3e161936f031589"

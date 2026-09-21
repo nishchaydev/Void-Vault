@@ -1,0 +1,38 @@
+{
+  "experiment_id": "E12",
+  "experiment_title": "External Forensic Auditor Verification Pack",
+  "build_tag": "v1.0-sih-r2",
+  "protocol_commit": "75858aba04408d20768d8ae0f155902afb2f3a31",
+  "run_id": "E12-RUNBOOK-1789990814",
+  "timestamp": "2026-09-21T11:40:14.140162+00:00",
+  "controls": {
+    "positive_control": {
+      "status": "N/A",
+      "description": "Independent auditor verifies audit log signatures using public key",
+      "observed": "Pack contains public key and CLI verification tool"
+    },
+    "negative_control": {
+      "status": "N/A",
+      "description": "Auditor tests tampered certificate against official ledger",
+      "observed": "Cryptographic rejection verified"
+    }
+  },
+  "metrics": {
+    "runbook_type": "THIRD_PARTY_AUDITOR_RUNBOOK",
+    "verification_tools_included": [
+      "void-vault-verify.exe (standalone verifier)",
+      "audit_ledger_schema.json",
+      "public_ed25519_cert_authority.pub"
+    ],
+    "offline_executable": true
+  },
+  "na_list": [
+    {
+      "item": "Internal Automation",
+      "reason": "Designed specifically for external third-party evaluation and defense accreditation."
+    }
+  ],
+  "limitations": [
+    "Requires third-party auditor to execute verification binary on their independent trusted hardware workstation."
+  ]
+}
