@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: Void Vault Evidence Hub
+message: If you reference this work, please cite it as below.
+type: software
+authors:
+  - name: "Team eMitra"
+date-released: 2026-09-21
+url: "https://github.com/nishchaydev/Void-Vault"
+keywords:
+  - sih2026
+  - digital-forensics
+  - data-sanitization
+  - nist-800-88
+  - file-carving

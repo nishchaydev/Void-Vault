@@ -1,0 +1,37 @@
+slugs:
+  hub:
+    destination: "https://github.com/nishchaydev/Void-Vault"
+    description: "Repository root"
+  demo:
+    destination: "#demo"
+    description: "Demo video"
+  docs:
+    destination: "/"
+    description: "Landing page / documentation portal"
+  research:
+    destination: "/docs/research/bibliography.md"
+    description: "Research bibliography"
+  spec:
+    destination: "/docs/03-technical-specification.md"
+    description: "Technical specification"
+  manual:
+    destination: "/docs/16-user-manual.md"
+    description: "User manual"
+  validation:
+    destination: "/docs/09-validation-report.md"
+    description: "Validation & testing report"
+  architecture:
+    destination: "/docs/02-architecture.md"
+    description: "System architecture"
+  progress:
+    destination: "/CHANGELOG.md"
+    description: "Project progress"
+  bsa63:
+    destination: "/docs/06-evidence-and-legal.md"
+    description: "BSA 2023 s.63 evidence & legal"
+  nist:
+    destination: "/docs/11-standards-alignment.md"
+    description: "Standards alignment"
+  pack:
+    destination: "https://github.com/nishchaydev/Void-Vault/releases/latest"
+    description: "Evaluator pack (offline ZIP)"

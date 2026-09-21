@@ -1,0 +1,68 @@
+name: Build Evaluator Pack
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build evaluator pack
+        run: |
+          mkdir -p pack-staging
+
+          # Copy documentation
+          cp -r docs/ pack-staging/docs/
+          cp -r diagrams/ pack-staging/diagrams/
+          cp -r samples/ pack-staging/samples/
+          cp -r schemas/ pack-staging/schemas/
+          cp -r validation/ pack-staging/validation/
+          cp -r research/ pack-staging/research/
+          cp -r assets/ pack-staging/assets/
+
+          # Copy root files
+          cp README.md pack-staging/
+          cp CHANGELOG.md pack-staging/
+          cp LICENSE pack-staging/
+          cp LICENSE-ASSETS.md pack-staging/
+          cp CITATION.cff pack-staging/
+
+          # Copy data layer
+          cp -r data/ pack-staging/data/
+
+          # Remove any .gitkeep files
+          find pack-staging -name '.gitkeep' -delete
+
+          # Create the ZIP
+          cd pack-staging
+          zip -r ../SIH26149_evaluator-pack.zip .
+          cd ..
+
+          # Generate SHA256SUMS
+          sha256sum SIH26149_evaluator-pack.zip > SHA256SUMS
+          echo "Pack built successfully."
+          cat SHA256SUMS
+
+      - name: Upload pack to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            SIH26149_evaluator-pack.zip
+            SHA256SUMS
+
+      - name: Upload pack as artifact
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluator-pack
+          path: |
+            SIH26149_evaluator-pack.zip
+            SHA256SUMS

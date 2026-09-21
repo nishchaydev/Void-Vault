@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070A10" />
+      <stop offset="100%" stop-color="#0D131F" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DC2626" />
+      <stop offset="100%" stop-color="#F87171" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Header Block -->
+  <text x="50" y="52" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="1">VOID VAULT — CLOSED-LOOP FORENSIC VERIFICATION ENGINE</text>
+  <text x="50" y="76" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Mathematical Proof Cycle: Sanitization (Defense) → Adversarial Carve (Offense) → BSA 2023 Sec 63 (Certification)</text>
+
+  <!-- Grid Pattern -->
+  <g opacity="0.05" stroke="#FFFFFF" stroke-width="1">
+    <line x1="50" y1="100" x2="950" y2="100" />
+    <line x1="50" y1="200" x2="950" y2="200" />
+    <line x1="50" y1="300" x2="950" y2="300" />
+    <line x1="50" y1="400" x2="950" y2="400" />
+    <line x1="50" y1="500" x2="950" y2="500" />
+  </g>
+
+  <!-- STAGE 1: ERASE (THE DEFENSE) -->
+  <g transform="translate(60, 130)">
+    <rect width="250" height="340" rx="10" fill="#0C1524" stroke="#0284C7" stroke-width="1.8" />
+    <rect width="250" height="42" rx="10" fill="#0369A1" fill-opacity="0.3" />
+    <text x="20" y="27" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700">01. ERASE (DEFENSE)</text>
+    
+    <text x="20" y="70" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Hardware &amp; Sector Wipe</text>
+    <text x="20" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 17 Sanitization Standards</text>
+    <text x="20" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• NIST SP 800-88 Rev 1 Purge</text>
+    <text x="20" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• DoD 5220.22-M 7-Pass</text>
+    <text x="20" y="155" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• NVMe Hardware Crypto Erase</text>
+    <text x="20" y="175" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Smart Secure Wipe™ (67 sec)</text>
+    <text x="20" y="195" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• DSM TRIM Allocation Purge</text>
+
+    <!-- Win32 Direct I/O Tag -->
+    <rect x="15" y="235" width="220" height="75" rx="6" fill="#070C16" stroke="#1E293B" />
+    <text x="25" y="255" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">KERNEL I/O SUBSYSTEM</text>
+    <text x="25" y="275" fill="#CBD5E1" font-family="'JetBrains Mono', monospace" font-size="9.5">CreateFileW(\\\\.\\PhysicalDriveX)</text>
+    <text x="25" y="292" fill="#64748B" font-family="'JetBrains Mono', monospace" font-size="9">FILE_FLAG_NO_BUFFERING</text>
+  </g>
+
+  <!-- ARROW 1 -> 2 -->
+  <path d="M 315 300 L 365 300" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="318" y="285" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">MEDIA STATE</text>
+
+  <!-- STAGE 2: CARVE (THE OFFENSE) -->
+  <g transform="translate(375, 130)">
+    <rect width="250" height="340" rx="10" fill="#1C1015" stroke="#DC2626" stroke-width="1.8" />
+    <rect width="250" height="42" rx="10" fill="#991B1B" fill-opacity="0.3" />
+    <text x="20" y="27" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700">02. CARVE (OFFENSE)</text>
+    
+    <text x="20" y="70" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Adversarial Forensic Probe</text>
+    <text x="20" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 20+ File Magic Signatures</text>
+    <text x="20" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Bifragment Gap Carving (BGC)</text>
+    <text x="20" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 4MB Direct I/O Streaming</text>
+    <text x="20" y="155" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• RAM Zero-Skip Engine</text>
+    <text x="20" y="175" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Raw Slack &amp; Unallocated Scan</text>
+    <text x="20" y="195" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• AST Image Structure Validator</text>
+
+    <!-- Forensic Outcome Tag -->
+    <rect x="15" y="235" width="220" height="75" rx="6" fill="#140A0E" stroke="#371B20" />
+    <text x="25" y="255" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">ADVERSARIAL VERDICT</text>
+    <text x="25" y="275" fill="#FCA5A5" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">0 Files Recoverable (0 B)</text>
+    <text x="25" y="292" fill="#7F1D1D" font-family="'JetBrains Mono', monospace" font-size="9">Residual entropy = 7.9998 bits/B</text>
+  </g>
+
+  <!-- ARROW 2 -> 3 -->
+  <path d="M 630 300 L 680 300" stroke="#34D399" stroke-width="2.5" marker-end="url(#arr)" />
+  <text x="635" y="285" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">PROOF LOG</text>
+
+  <!-- STAGE 3: CERTIFY (THE PROOF) -->
+  <g transform="translate(690, 130)">
+    <rect width="250" height="340" rx="10" fill="#0C1B17" stroke="#059669" stroke-width="1.8" />
+    <rect width="250" height="42" rx="10" fill="#065F46" fill-opacity="0.3" />
+    <text x="20" y="27" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700">03. CERTIFY (PROOF)</text>
+    
+    <text x="20" y="70" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">BSA 2023 Section 63 Proof</text>
+    <text x="20" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Merkle Root Hash Chain</text>
+    <text x="20" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• SHA-256 Sector Fingerprint</text>
+    <text x="20" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Part A (Custodian Statement)</text>
+    <text x="20" y="155" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Part B (Examiner Statement)</text>
+    <text x="20" y="175" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Offline SPV Air-Gap Valid</text>
+    <text x="20" y="195" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Court-Admissible Electronic Cert</text>
+
+    <!-- Certificate Signature Box -->
+    <rect x="15" y="235" width="220" height="75" rx="6" fill="#07120E" stroke="#123B2A" />
+    <text x="25" y="255" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">CHAIN OF CUSTODY CERT</text>
+    <text x="25" y="275" fill="#A7F3D0" font-family="'JetBrains Mono', monospace" font-size="9.5">REP-10B457CE.json</text>
+    <text x="25" y="292" fill="#059669" font-family="'JetBrains Mono', monospace" font-size="9">Merkle Root: 7e2f9d...4b11</text>
+  </g>
+
+  <!-- FEEDBACK LOOP BACK TO STAGE 1 -->
+  <path d="M 815 480 L 815 540 L 185 540 L 185 480" stroke="#38BDF8" stroke-width="2" stroke-dasharray="6 4" fill="none" />
+  <rect x="420" y="525" width="160" height="30" rx="4" fill="#070A10" stroke="#38BDF8" stroke-width="1" />
+  <text x="430" y="545" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">CYCLE COMPLETE (0 FILES)</text>
+
+  <!-- Footer Info -->
+  <text x="50" y="595" fill="#64748B" font-family="'Inter', sans-serif" font-size="11">Architecture Source: docs/diagrams/closed-loop-flow.md • Void Vault Digital Forensics Subsystem • SIH 2026</text>
+</svg>

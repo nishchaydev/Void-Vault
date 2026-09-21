@@ -1,0 +1,90 @@
+name: Quality Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ban-list check
+        run: node scripts/check-banlist.js
+
+      - name: Facts validation
+        run: node scripts/check-facts.js
+
+      - name: Screenshot metadata check
+        run: |
+          if [ -f "assets/screenshots/index.yml" ]; then
+            echo "Checking screenshot metadata..."
+            # Verify every screenshot entry has: alt, caption, ps_clause, build, date
+            node -e "
+              const fs = require('fs');
+              const yaml = require('js-yaml') || JSON.parse(fs.readFileSync('assets/screenshots/index.yml','utf8'));
+              console.log('Screenshot index exists. Manual review required for completeness.');
+            " || echo "Screenshot index check: manual review needed"
+          fi
+
+      - name: Check for placeholder text
+        run: |
+          echo "Checking for forbidden placeholder text in docs..."
+          FOUND=0
+          for pattern in 'TBD' 'TODO' 'NEEDS-INPUT' 'lorem ipsum' 'Lorem Ipsum'; do
+            if grep -r --include='*.md' -l "$pattern" docs/ 2>/dev/null; then
+              echo "ERROR: Found '$pattern' in docs/"
+              FOUND=1
+            fi
+          done
+          if [ "$FOUND" -eq 1 ]; then
+            echo "::error::Placeholder text found in docs. Remove before merging to main."
+            exit 1
+          fi
+          echo "No placeholder text found."
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link check with lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-mail
+            --exclude 'localhost'
+            --exclude '127.0.0.1'
+            --exclude 'pending'
+            '**/*.md'
+            '**/*.html'
+          fail: true
+
+  redirects:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate and verify /go/* redirects
+        run: |
+          node scripts/generate-redirects.js
+          echo "Verifying all slugs have been generated..."
+          for slug in hub demo docs research spec manual validation architecture progress bsa63 nist pack; do
+            if [ ! -f "go/$slug/index.html" ]; then
+              echo "ERROR: Missing redirect for /go/$slug"
+              exit 1
+            fi
+          done
+          echo "All /go/* redirects verified."

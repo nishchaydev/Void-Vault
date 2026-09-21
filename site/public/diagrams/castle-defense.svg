@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06090E" />
+      <stop offset="100%" stop-color="#0D1422" />
+    </linearGradient>
+    <marker id="arr6" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad6)" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Header -->
+  <text x="50" y="52" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="1">CASTLE SHIELD: DEFENSE-IN-DEPTH ARCHITECTURE</text>
+  <text x="50" y="76" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Air-Gapped &amp; MATE Threat Resistance: Surveyed Across 800+ Academic Research Papers</text>
+
+  <!-- 6 Defense Layers (2 rows x 3 columns) -->
+  <!-- LAYER 1 -->
+  <g transform="translate(50, 115)">
+    <rect width="280" height="185" rx="8" fill="#0C1524" stroke="#0284C7" stroke-width="1.5" />
+    <rect width="280" height="34" rx="8" fill="#0369A1" fill-opacity="0.25" />
+    <text x="14" y="22" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">1. OUTER BOUNDARY (THE MOAT)</text>
+    <text x="14" y="55" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Cryptographic Provenance</text>
+    <text x="14" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Authenticode &amp; Sigstore Signing</text>
+    <text x="14" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Deterministic Reproducible Builds</text>
+    <text x="14" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Signed SPDX / CycloneDX SBOM</text>
+    <text x="14" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Supply Chain Poisoning Defense</text>
+    <text x="14" y="165" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="9">Academic: in-toto (USENIX '19)</text>
+  </g>
+
+  <!-- LAYER 2 -->
+  <g transform="translate(360, 115)">
+    <rect width="280" height="185" rx="8" fill="#131B10" stroke="#059669" stroke-width="1.5" />
+    <rect width="280" height="34" rx="8" fill="#065F46" fill-opacity="0.25" />
+    <text x="14" y="22" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">2. PROCESS CONTAINMENT (WALL)</text>
+    <text x="14" y="55" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Micro-Sandboxing &amp; SFI</text>
+    <text x="14" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Windows AppContainer Isolation</text>
+    <text x="14" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Zero-Network Egress Jailing</text>
+    <text x="14" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• RLBox WebAssembly Boundaries</text>
+    <text x="14" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Kernel Syscall Filter (Seccomp/Win32)</text>
+    <text x="14" y="165" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9">Academic: RLBox (USENIX Security '20)</text>
+  </g>
+
+  <!-- LAYER 3 -->
+  <g transform="translate(670, 115)">
+    <rect width="280" height="185" rx="8" fill="#1B140B" stroke="#D97706" stroke-width="1.5" />
+    <rect width="280" height="34" rx="8" fill="#B45309" fill-opacity="0.25" />
+    <text x="14" y="22" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">3. HARDWARE ROOT OF TRUST</text>
+    <text x="14" y="55" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Physical Token &amp; PUF</text>
+    <text x="14" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Code-in-Dongle Hardware Token</text>
+    <text x="14" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Intrinsic SRAM PUF Silicon Key</text>
+    <text x="14" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• TPM 2.0 PCR Platform Sealing</text>
+    <text x="14" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Anti-VM &amp; Anti-Clone Enclave</text>
+    <text x="14" y="165" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="9">Academic: Aura &amp; Gollmann (USENIX)</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- LAYER 4 -->
+  <g transform="translate(50, 325)">
+    <rect width="280" height="185" rx="8" fill="#1C1015" stroke="#DC2626" stroke-width="1.5" />
+    <rect width="280" height="34" rx="8" fill="#991B1B" fill-opacity="0.25" />
+    <text x="14" y="22" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">4. ACTIVE GUARDS (RASP)</text>
+    <text x="14" y="55" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Self-Checking Guard Network</text>
+    <text x="14" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Chang-Atallah Interlocking Guards</text>
+    <text x="14" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Dynamic Binary Self-Checksumming</text>
+    <text x="14" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Anti-Debugging (PEB, Hardware BPs)</text>
+    <text x="14" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Memory Cloaking &amp; Anti-Hook</text>
+    <text x="14" y="165" fill="#F87171" font-family="'JetBrains Mono', monospace" font-size="9">Academic: Chang &amp; Atallah (ACM MM '01)</text>
+  </g>
+
+  <!-- LAYER 5 -->
+  <g transform="translate(360, 325)">
+    <rect width="280" height="185" rx="8" fill="#181124" stroke="#7C3AED" stroke-width="1.5" />
+    <rect width="280" height="34" rx="8" fill="#6D28D9" fill-opacity="0.25" />
+    <text x="14" y="22" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">5. CONCEALMENT (VAULT)</text>
+    <text x="14" y="55" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">White-Box Cryptography &amp; VM</text>
+    <text x="14" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Custom Bytecode Virtualization</text>
+    <text x="14" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Control-Flow Flattening</text>
+    <text x="14" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Chow AES Mixed Biphasic Tables</text>
+    <text x="14" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Defeats IDA Pro / Ghidra Decompilation</text>
+    <text x="14" y="165" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="9">Academic: Chow et al. (SAC '02)</text>
+  </g>
+
+  <!-- LAYER 6 -->
+  <g transform="translate(670, 325)">
+    <rect width="280" height="185" rx="8" fill="#0C1B1A" stroke="#0EA5E9" stroke-width="1.5" />
+    <rect width="280" height="34" rx="8" fill="#0284C7" fill-opacity="0.25" />
+    <text x="14" y="22" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">6. SOVEREIGN AUDIT (LEDGER)</text>
+    <text x="14" y="55" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Merkle Trees &amp; Zero-Knowledge</text>
+    <text x="14" y="75" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Merkle Hash Chain Audit Spine</text>
+    <text x="14" y="95" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• BSA 2023 Section 63 Evidence Cert</text>
+    <text x="14" y="115" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• zk-SNARK Non-Interactive Proof</text>
+    <text x="14" y="135" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10.5">• Air-Gapped Offline SPV Validation</text>
+    <text x="14" y="165" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="9">Academic: Merkle (IEEE S&amp;P '80), Pinocchio</text>
+  </g>
+
+  <!-- Bottom Quote -->
+  <rect x="50" y="530" width="900" height="40" rx="6" fill="#0A0F1A" stroke="#1E293B" />
+  <text x="65" y="555" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="11">Dossier Literature: Surveyed across 800+ peer-reviewed papers in IEEE S&amp;P, USENIX Security, ACM CCS, NDSS • research/anti-piracy/</text>
+
+  <text x="50" y="595" fill="#64748B" font-family="'Inter', sans-serif" font-size="11">Architecture Source: research/anti-piracy/README.md • The Castle Model for Government Software Protection</text>
+</svg>

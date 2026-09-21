@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Noindex until SIH results are announced.
+# Remove this file or change to Allow: / after results.

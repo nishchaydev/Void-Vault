@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build site
+        working-directory: site
+        run: npm run build
+
+      - name: Generate /go/* redirects
+        run: node scripts/generate-redirects.js
+
+      - name: Copy docs and assets to dist
+        run: |
+          cp -r docs site/dist/docs || true
+          cp -r diagrams site/dist/diagrams || true
+          cp -r samples site/dist/samples || true
+          cp -r validation site/dist/validation || true
+          cp -r research site/dist/research || true
+          cp -r assets site/dist/assets || true
+          cp -r go site/dist/go || true
+          cp README.md site/dist/README.md || true
+          cp CHANGELOG.md site/dist/CHANGELOG.md || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

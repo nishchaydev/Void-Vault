@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" role="img" color="#14202B"
+           aria-label="Layered architecture: GUI and CLI entry points feed a Rust core of three domain modules, whose results converge on a verification and evidence spine; all raw device access sits below a privilege boundary requiring Administrator rights.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+          </marker>
+          <marker id="ah-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,1 10,5 0,9" fill="#C85A35"></polygon>
+          </marker>
+          <marker id="ah-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,1 10,5 0,9" fill="#1F8E7D"></polygon>
+          </marker>
+        </defs>
+
+        <!-- title block -->
+        <text x="40" y="30" font-family="Archivo, sans-serif" font-size="20" font-weight="700" fill="currentColor">Void Vault — System Architecture</text>
+        <text x="40" y="52" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.65">PS-26149 · Rust 2021 + Tauri v2 · Windows x86-64 · windows-rs 0.61 Win32 FFI</text>
+
+        <!-- ============ COLUMN 1 — INPUTS ============ -->
+        <text x="40" y="70" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.1em" fill="currentColor" opacity="0.55">ENTRY POINTS &amp; SOURCES</text>
+
+        <rect x="40" y="76" width="200" height="130" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="54" y="98" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Desktop GUI</text>
+        <text x="54" y="114" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">gui/ · Tauri v2</text>
+        <text x="54" y="132" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">React 19 · Vite 6 · Tailwind 4</text>
+        <text x="54" y="148" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">8 pages · ~5,000 LOC</text>
+        <text x="54" y="164" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">Dashboard · Devices · Erasure</text>
+        <text x="54" y="180" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">Recovery · Reports · Compliance</text>
+        <text x="54" y="197" font-family="IBM Plex Mono, monospace" font-size="9" fill="#C85A35">self-elevates via UAC</text>
+
+        <rect x="40" y="222" width="200" height="90" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="54" y="244" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Interactive CLI</text>
+        <text x="54" y="260" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">ps149.exe · main.rs</text>
+        <text x="54" y="278" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">7-option operator menu</text>
+        <text x="54" y="294" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">live progress · hot-plug watch</text>
+
+        <rect x="40" y="328" width="200" height="88" rx="3" fill="none" stroke="currentColor" stroke-width="1.1" stroke-dasharray="5 4" opacity="0.75"></rect>
+        <text x="54" y="350" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">AI Advisory</text>
+        <text x="54" y="366" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">ai/ → api.groq.com</text>
+        <text x="54" y="384" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">optional · off by default</text>
+        <text x="54" y="400" font-family="IBM Plex Mono, monospace" font-size="9" fill="#C85A35">the only network egress</text>
+
+        <rect x="40" y="432" width="200" height="86" rx="3" fill="#1F8E7D" fill-opacity="0.06" stroke="#1F8E7D" stroke-width="1.2"></rect>
+        <text x="54" y="454" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Disk Images</text>
+        <text x="54" y="470" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">.dd / .raw / .img</text>
+        <text x="54" y="488" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">read-only evidence source</text>
+        <text x="54" y="505" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1F8E7D">no elevation needed</text>
+
+        <!-- ============ COLUMN 2 — API ============ -->
+        <rect x="300" y="76" width="160" height="130" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="314" y="98" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Local API</text>
+        <text x="314" y="114" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">server.rs</text>
+        <text x="314" y="132" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">std::net::TcpListener</text>
+        <text x="314" y="148" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">no HTTP framework</text>
+        <text x="314" y="166" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">127.0.0.1:5001</text>
+        <text x="314" y="181" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">29 routes · telemetry</text>
+        <text x="314" y="197" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" opacity="0.7">loopback only</text>
+
+        <!-- GUI -> API -->
+        <line x1="240" y1="141" x2="296" y2="141" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)"></line>
+        <text x="268" y="134" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">HTTP</text>
+
+        <!-- CLI -> dispatch bus -->
+        <polyline points="240,267 478,267" fill="none" stroke="currentColor" stroke-width="1.4"></polyline>
+        <text x="352" y="259" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">direct calls</text>
+
+        <!-- API -> dispatch bus -->
+        <line x1="460" y1="141" x2="478" y2="141" stroke="currentColor" stroke-width="1.4"></line>
+
+        <!-- dispatch bus -->
+        <line x1="478" y1="141" x2="478" y2="466" stroke="currentColor" stroke-width="1.4"></line>
+        <line x1="478" y1="152" x2="492" y2="152" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)"></line>
+        <line x1="478" y1="312" x2="492" y2="312" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)"></line>
+        <line x1="478" y1="466" x2="492" y2="466" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)"></line>
+        <text x="470" y="497" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">dispatch</text>
+
+        <!-- Disk images -> Module 3 -->
+        <line x1="240" y1="475" x2="492" y2="475" stroke="#1F8E7D" stroke-width="1.4" marker-end="url(#ah-teal)"></line>
+
+        <!-- ============ COLUMN 3 — DOMAIN MODULES ============ -->
+        <text x="496" y="70" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.1em" fill="currentColor" opacity="0.55">DOMAIN MODULES — ps149_core</text>
+
+        <rect x="496" y="76" width="290" height="152" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="510" y="98" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Module 1 — Drive Eraser</text>
+        <text x="510" y="114" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">sanitize/</text>
+        <text x="510" y="132" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">17 sanitization standards</text>
+        <text x="510" y="148" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">NIST SP 800-88 · DoD 5220.22-M</text>
+        <text x="510" y="163" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">Gutmann-35 · VSITR · HMG IS5</text>
+        <text x="510" y="181" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">adaptive double-buffered pipeline</text>
+        <text x="510" y="199" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="#C85A35">hardware purge:</text>
+        <text x="510" y="215" font-family="IBM Plex Mono, monospace" font-size="9" fill="#C85A35">NVMe Sanitize · DSM TRIM · Opal PSID</text>
+
+        <rect x="496" y="244" width="290" height="136" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="510" y="266" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Module 2 — File Shredder</text>
+        <text x="510" y="282" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">file_eraser/ · ~1,600 LOC</text>
+        <text x="510" y="300" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">multi-pass overwrite · batch mode</text>
+        <text x="510" y="318" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">ADS · slack space · $MFT · $UsnJrnl</text>
+        <text x="510" y="336" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">free-space wipe · metadata cleanse</text>
+        <text x="510" y="354" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">filename &amp; timestamp obfuscation</text>
+        <text x="510" y="371" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1F8E7D">user-owned files: no elevation</text>
+
+        <rect x="496" y="396" width="290" height="140" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+        <text x="510" y="418" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Module 3 — Recovery Carver</text>
+        <text x="510" y="434" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">carver/ · ~3,100 LOC</text>
+        <text x="510" y="452" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">signature + structure carving</text>
+        <text x="510" y="470" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">$MFT · FAT dir · ext4 journal</text>
+        <text x="510" y="488" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">BFD classifier · bifragment gap carving</text>
+        <text x="510" y="506" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">confidence scoring · validators</text>
+        <text x="510" y="524" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">Rayon parallel · 20+ file types</text>
+
+        <!-- modules -> results collector -->
+        <line x1="786" y1="152" x2="800" y2="152" stroke="currentColor" stroke-width="1.4"></line>
+        <line x1="786" y1="312" x2="800" y2="312" stroke="currentColor" stroke-width="1.4"></line>
+        <line x1="786" y1="466" x2="800" y2="466" stroke="currentColor" stroke-width="1.4"></line>
+        <line x1="800" y1="152" x2="800" y2="592" stroke="currentColor" stroke-width="1.4"></line>
+        <line x1="800" y1="171" x2="812" y2="171" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)"></line>
+
+        <!-- ============ COLUMN 4 — EVIDENCE SPINE ============ -->
+        <text x="816" y="70" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.1em" fill="#1F8E7D" opacity="0.9">VERIFICATION &amp; EVIDENCE</text>
+
+        <rect x="816" y="76" width="244" height="182" rx="3" fill="#1F8E7D" fill-opacity="0.06" stroke="#1F8E7D" stroke-width="1.3"></rect>
+        <text x="830" y="98" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Verification</text>
+        <text x="830" y="114" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">verify/</text>
+        <text x="830" y="132" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">full sector readback</text>
+        <text x="830" y="150" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">stratified random sampling</text>
+        <text x="830" y="168" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">Shannon entropy + χ² test</text>
+        <text x="830" y="186" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">xxHash3 fast pass</text>
+        <text x="830" y="201" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">SHA-256 forensic hash</text>
+        <text x="830" y="219" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">NIST CFTT test protocols</text>
+        <text x="830" y="237" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">entropy map · HPA/DCO check</text>
+        <text x="830" y="252" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1F8E7D">proves the erase, not just claims it</text>
+
+        <rect x="816" y="284" width="244" height="180" rx="3" fill="#1F8E7D" fill-opacity="0.06" stroke="#1F8E7D" stroke-width="1.3"></rect>
+        <text x="830" y="306" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Evidence &amp; Audit</text>
+        <text x="830" y="322" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#2C5F7C">report/</text>
+        <text x="830" y="340" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">BSA 2023 §63 certificate</text>
+        <text x="830" y="358" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">JSON + human-readable report</text>
+        <text x="830" y="376" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">SHA-256 hash chain</text>
+        <text x="830" y="391" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">+ Merkle root</text>
+        <text x="830" y="409" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">tamper-evident audit log</text>
+        <text x="830" y="427" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">IEEE 2883 · ISO/IEC 27037</text>
+        <text x="830" y="445" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">chain verification on demand</text>
+        <text x="830" y="459" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1F8E7D">independently verifiable</text>
+
+        <!-- verify -> report -->
+        <line x1="938" y1="258" x2="938" y2="280" stroke="#1F8E7D" stroke-width="1.4" marker-end="url(#ah-teal)"></line>
+        <text x="950" y="274" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1F8E7D">pass/fail · hashes</text>
+
+        <!-- device data returning up the collector -->
+        <line x1="800" y1="592" x2="800" y2="470" stroke="currentColor" stroke-width="1.4" marker-end="url(#ah)"></line>
+        <text x="790" y="556" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">device inventory · readback data</text>
+
+        <!-- ============ PRIVILEGE BOUNDARY ============ -->
+        <line x1="40" y1="570" x2="1250" y2="570" stroke="#C85A35" stroke-width="1.5" stroke-dasharray="7 5"></line>
+        <text x="1250" y="562" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#C85A35">▲ runs unprivileged</text>
+        <text x="1250" y="586" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9.5" font-weight="500" fill="#C85A35">▼ Administrator required</text>
+        <text x="40" y="562" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1F8E7D">Module 2 on user files and image-based carving never cross this line</text>
+
+        <!-- privileged operations crossing down -->
+        <line x1="560" y1="536" x2="560" y2="596" stroke="#C85A35" stroke-width="1.8" marker-end="url(#ah-amber)"></line>
+        <text x="572" y="556" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#C85A35">privileged device operations</text>
+
+        <!-- ============ OS ACCESS LAYER ============ -->
+        <rect x="40" y="596" width="1210" height="104" rx="3" fill="#C85A35" fill-opacity="0.05" stroke="#C85A35" stroke-width="1.2"></rect>
+        <text x="54" y="614" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.08em" fill="#C85A35">WINDOWS KERNEL INTERFACE — windows-rs 0.61 Win32 FFI</text>
+
+        <line x1="322" y1="622" x2="322" y2="692" stroke="#C85A35" stroke-width="0.8" opacity="0.45"></line>
+        <line x1="606" y1="622" x2="606" y2="692" stroke="#C85A35" stroke-width="0.8" opacity="0.45"></line>
+        <line x1="846" y1="622" x2="846" y2="692" stroke="#C85A35" stroke-width="0.8" opacity="0.45"></line>
+
+        <text x="54" y="638" font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="currentColor">Device Discovery</text>
+        <text x="54" y="654" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">discovery/ · WMI</text>
+        <text x="54" y="668" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">Win32_DiskDrive</text>
+        <text x="54" y="682" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">GetLogicalDrives fallback</text>
+
+        <text x="338" y="638" font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="currentColor">Raw Sector I/O</text>
+        <text x="338" y="654" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">sanitize/raw_io.rs</text>
+        <text x="338" y="668" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">CreateFileW \\.\PhysicalDriveN</text>
+        <text x="338" y="682" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">FILE_FLAG_WRITE_THROUGH</text>
+
+        <text x="622" y="638" font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="currentColor">Volume Control</text>
+        <text x="622" y="654" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">sanitize/volume_ops.rs</text>
+        <text x="622" y="668" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">FSCTL_LOCK_VOLUME</text>
+        <text x="622" y="682" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">FSCTL_DISMOUNT_VOLUME</text>
+
+        <text x="862" y="638" font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="currentColor">Device IOCTL &amp; Pass-Through</text>
+        <text x="862" y="654" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">IOCTL_ATA_PASS_THROUGH — SMART · HPA/DCO · Opal discovery</text>
+        <text x="862" y="668" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">IOCTL_STORAGE_REINITIALIZE_MEDIA — NVMe crypto-erase</text>
+        <text x="862" y="682" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES — DSM TRIM</text>
+
+        <!-- OS -> media -->
+        <line x1="645" y1="700" x2="645" y2="726" stroke="#C85A35" stroke-width="1.6" marker-end="url(#ah-amber)"></line>
+        <text x="657" y="718" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#C85A35">raw sector I/O · LBA addressing</text>
+
+        <!-- ============ PHYSICAL MEDIA ============ -->
+        <rect x="40" y="726" width="1210" height="62" rx="3" fill="none" stroke="currentColor" stroke-width="1.4"></rect>
+        <text x="54" y="748" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Physical Media</text>
+        <text x="54" y="770" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor">HDD (SATA / IDE) · SATA SSD · NVMe PCIe · USB flash · SD card · eMMC / UFS</text>
+        <text x="1236" y="770" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor" opacity="0.7">hot-plug detected at runtime</text>
+
+        <!-- ============ LEGEND ============ -->
+        <line x1="40" y1="818" x2="1250" y2="818" stroke="currentColor" stroke-width="0.8" opacity="0.25"></line>
+
+        <line x1="40" y1="843" x2="70" y2="843" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4"></line>
+        <text x="78" y="847" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">optional — off by default</text>
+
+        <rect x="270" y="836" width="14" height="14" rx="2" fill="#1F8E7D" fill-opacity="0.18" stroke="#1F8E7D" stroke-width="1.2"></rect>
+        <text x="292" y="847" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">verification &amp; evidence path — no elevation</text>
+
+        <rect x="620" y="836" width="14" height="14" rx="2" fill="#C85A35" fill-opacity="0.18" stroke="#C85A35" stroke-width="1.2"></rect>
+        <text x="642" y="847" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">privileged zone — requires Administrator</text>
+
+        <text x="1250" y="847" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor" opacity="0.6">dual build target: ps149_core (lib) + ps149 (bin)</text>
+      </svg>

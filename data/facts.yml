@@ -1,0 +1,79 @@
+build_of_record:
+  version: "pending"  # Team supplies
+  commit: "pending"
+  date: "pending"
+  tag: "pending"
+
+project:
+  name: "Void Vault"
+  ps_id: "SIH26149"
+  portal_id: 26149
+  organization: "National Technical Research Organisation (NTRO)"
+  theme: "Blockchain & Cybersecurity"
+  team_name: "eMitra"
+  team_id: 146878
+  tagline: "Secure Today. Unrecoverable Tomorrow."
+
+modules:
+  m1_drive_eraser:
+    name: "Secure Drive Eraser"
+    status: "Implemented"
+    standards_count: 17
+    evidence: "docs/04-sanitization-methods.md"
+  m2_file_eraser:
+    name: "Secure File & Folder Eraser"
+    status: "Implemented"
+    phases: 4
+    evidence: "docs/03-technical-specification.md"
+  m3_carver:
+    name: "Advanced File Carving and Recovery"
+    status: "Implemented"
+    signatures: 20
+    evidence: "docs/03-technical-specification.md"
+  reporting:
+    name: "Reporting and Audit Management System"
+    status: "Implemented"
+    evidence: "docs/07-audit-ledger.md"
+  dashboard:
+    name: "User Interface Dashboard"
+    status: "Implemented"
+    evidence: "assets/screenshots/"
+  bsa63:
+    name: "BSA s.63(4) Certificate"
+    status: "Prototype"
+    evidence: "docs/06-evidence-and-legal.md"
+  blockchain:
+    name: "Blockchain Anchoring"
+    status: "Planned"
+    evidence: "docs/07-audit-ledger.md"
+
+tests:
+  total: "pending"  # From CI of tagged build
+  passing: "pending"
+  coverage: "pending"
+
+research:
+  papers_count: "pending"  # Must match verified bibliography
+  papers_verified: false
+
+standards:
+  - id: "nist-800-88"
+    name: "NIST SP 800-88 Rev. 2"
+    status: "Aligned"
+    not_claimed: "Not NIST-certified or NIST-tested"
+  - id: "ieee-2883"
+    name: "IEEE 2883-2022"
+    status: "Aligned"
+    not_claimed: "Not IEEE-certified"
+  - id: "iso-27037"
+    name: "ISO/IEC 27037:2012"
+    status: "Aligned"
+    not_claimed: "Not ISO-certified"
+  - id: "bsa-2023"
+    name: "BSA 2023 s.63(4)"
+    status: "Prototype"
+    not_claimed: "Certificate is unsigned; not legal advice"
+  - id: "dod-5220"
+    name: "DoD 5220.22-M"
+    status: "Implemented"
+    not_claimed: "Legacy method; prefer Purge"

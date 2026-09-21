@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nishchaydev.github.io/Void-Vault/schemas/audit-entry.schema.json",
+  "title": "Void Vault Audit Ledger Entry",
+  "description": "A single entry in the tamper-evident audit hash chain.",
+  "type": "object",
+  "required": ["index", "timestamp", "operation", "target", "result", "hash", "prev_hash"],
+  "properties": {
+    "index": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Sequential index in the ledger (0-based)."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the operation."
+    },
+    "session_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Groups related entries within a single operator session."
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "session_start",
+        "session_end",
+        "drive_enumerate",
+        "sanitize_start",
+        "sanitize_progress",
+        "sanitize_complete",
+        "verify_start",
+        "verify_complete",
+        "carve_start",
+        "carve_complete",
+        "certificate_generate",
+        "file_shred_start",
+        "file_shred_complete",
+        "error"
+      ],
+      "description": "Type of operation recorded."
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "device_serial": { "type": "string" },
+        "device_model": { "type": "string" },
+        "file_path": { "type": "string", "description": "For file-level operations." },
+        "lba_start": { "type": "integer" },
+        "lba_end": { "type": "integer" }
+      },
+      "description": "The device or file targeted by this operation."
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Operation-specific parameters (standard name, pass count, sampling config, etc.).",
+      "additionalProperties": true
+    },
+    "result": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["success", "failure", "in_progress", "skipped"] },
+        "detail": { "type": "string" },
+        "sectors_processed": { "type": "integer" },
+        "sectors_total": { "type": "integer" },
+        "duration_ms": { "type": "integer" },
+        "artifacts_found": { "type": "integer", "description": "For carve operations: number of files recovered." }
+      }
+    },
+    "operator": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "case_number": { "type": "string" }
+      }
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256(canonical_json(this_entry) || prev_hash)"
+    },
+    "prev_hash": {
+      "type": "string",
+      "pattern": "^(0{64}|[a-f0-9]{64})$",
+      "description": "Hash of the previous entry. Genesis entry uses 64 zeros."
+    }
+  }
+}

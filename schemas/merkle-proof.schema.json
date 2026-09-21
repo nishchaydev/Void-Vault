@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nishchaydev.github.io/Void-Vault/schemas/merkle-proof.schema.json",
+  "title": "Void Vault Merkle Proof",
+  "description": "Proof that a specific audit entry is included in a session's Merkle tree.",
+  "type": "object",
+  "required": ["session_id", "entry_index", "entry_hash", "merkle_root", "proof_path"],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "The session whose Merkle tree contains this entry."
+    },
+    "entry_index": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Index of the audit entry within the session."
+    },
+    "entry_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 hash of the target audit entry."
+    },
+    "merkle_root": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Root hash of the session Merkle tree."
+    },
+    "tree_size": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total number of leaves (entries) in the Merkle tree."
+    },
+    "proof_path": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["hash", "position"],
+        "properties": {
+          "hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "Sibling hash at this tree level."
+          },
+          "position": {
+            "type": "string",
+            "enum": ["left", "right"],
+            "description": "Whether this sibling is on the left or right."
+          }
+        }
+      },
+      "description": "Ordered list of sibling hashes from leaf to root."
+    },
+    "algorithm": {
+      "type": "string",
+      "const": "SHA-256"
+    },
+    "verification_steps": {
+      "type": "string",
+      "description": "Human-readable verification instructions."
+    }
+  }
+}
