@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { SparklesCore } from './ui/sparkles';
 import { GlowingEffect } from './ui/glowing-effect';
 import LandingBackdrop from './landing/LandingBackdrop';
+import { useRouter } from '../context/RouterContext';
+import { VoidVaultMark } from './ui/VoidVaultLogo';
 import { Play, FileText, Download, ShieldCheck, CheckCircle2, BookOpen, Layers } from 'lucide-react';
 
 export function Hero() {
+  const { navigate } = useRouter();
   const letters = "VOID VAULT".split("");
 
   const letterVariants = {
@@ -22,12 +25,9 @@ export function Hero() {
     }),
   };
 
-  const scrollTo = (id) => (e) => {
+  const handleNav = (target) => (e) => {
     e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate(target);
   };
 
   return (
@@ -56,17 +56,12 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="relative mb-5"
         >
-          <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-b from-[#1c1d22] to-[#0c0d0f] border border-orange-500/30 flex items-center justify-center shadow-[0_0_35px_rgba(255,86,0,0.22)] mx-auto relative group">
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-b from-[#1c1d22] to-[#0c0d0f] border border-orange-500/30 flex items-center justify-center shadow-[0_0_35px_rgba(255,86,0,0.22)] mx-auto relative group p-3.5">
             <div className="absolute inset-0 rounded-2xl bg-orange-500/10 blur-xl group-hover:bg-orange-500/20 transition-all" />
-            <svg
-              className="w-11 h-11 md:w-13 md:h-13 text-orange-500 relative z-10 drop-shadow-[0_0_14px_rgba(255,86,0,0.7)]"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M6 8L20 34L34 8H26L20 22L14 8H6Z" fill="currentColor" />
-              <path d="M13 8L20 20L27 8H22L20 12L18 8H13Z" fill="#FF7A33" opacity="0.95" />
-            </svg>
+            <VoidVaultMark 
+              className="w-full h-full text-orange-500 relative z-10 drop-shadow-[0_0_18px_rgba(255,86,0,0.75)] group-hover:scale-105 transition-transform" 
+              variant="orange" 
+            />
           </div>
         </motion.div>
 
@@ -148,8 +143,8 @@ export function Hero() {
           className="mt-8 flex flex-wrap items-center justify-center gap-3.5 w-full px-4"
         >
           <a
-            href="#demo"
-            onClick={scrollTo('demo')}
+            href="#/demo"
+            onClick={handleNav('demo')}
             className="relative group px-7 py-3 rounded-full text-sm font-medium text-white bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 hover:from-orange-500 hover:to-amber-500 shadow-[0_0_25px_rgba(255,86,0,0.35)] transition-all duration-300 hover:scale-[1.03] active:scale-98 flex items-center gap-2"
           >
             <GlowingEffect hoverLiquid breathe spread={35} borderWidth={1.5} proximity={45} glow />
@@ -158,8 +153,8 @@ export function Hero() {
           </a>
 
           <a
-            href="#ps-matrix"
-            onClick={scrollTo('ps-matrix')}
+            href="#/ps-matrix"
+            onClick={handleNav('ps-matrix')}
             className="relative group px-6 py-3 rounded-full text-sm font-medium text-neutral-200 bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-orange-500/40 transition-all duration-300 backdrop-blur-md hover:scale-[1.02] active:scale-98 flex items-center gap-2"
           >
             <GlowingEffect hoverLiquid breathe spread={30} borderWidth={1.2} proximity={40} glow />
@@ -168,18 +163,18 @@ export function Hero() {
           </a>
 
           <a
-            href="#docs"
-            onClick={scrollTo('docs')}
+            href="#/docs"
+            onClick={handleNav('docs')}
             className="relative group px-6 py-3 rounded-full text-sm font-medium text-neutral-200 bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-orange-500/40 transition-all duration-300 backdrop-blur-md hover:scale-[1.02] active:scale-98 flex items-center gap-2"
           >
             <GlowingEffect hoverLiquid breathe spread={30} borderWidth={1.2} proximity={40} glow />
             <BookOpen className="w-4 h-4 text-orange-400 relative z-10" />
-            <span className="relative z-10">17 Docs</span>
+            <span className="relative z-10">18 Docs</span>
           </a>
 
           <a
-            href="#pack"
-            onClick={scrollTo('pack')}
+            href="#/pack"
+            onClick={handleNav('pack')}
             className="relative group px-6 py-3 rounded-full text-sm font-medium text-neutral-200 bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-orange-500/40 transition-all duration-300 backdrop-blur-md hover:scale-[1.02] active:scale-98 flex items-center gap-2"
           >
             <GlowingEffect hoverLiquid breathe spread={30} borderWidth={1.2} proximity={40} glow />

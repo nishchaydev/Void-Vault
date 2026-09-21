@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { Github, FileText, Shield, ExternalLink, Cpu, Terminal, ArrowUp, Code2 } from "lucide-react";
+import { useRouter } from "../../context/RouterContext";
+import { VoidVaultMark } from "./VoidVaultLogo";
 
 export function LargeNameFooter() {
   const containerRef = useRef(null);
+  const { navigate } = useRouter();
 
   // Track scroll progress of the footer element
   const { scrollYProgress } = useScroll({
@@ -19,6 +22,12 @@ export function LargeNameFooter() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleNav = (routeId) => (e) => {
+    e.preventDefault();
+    navigate(routeId);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer
       ref={containerRef}
@@ -27,10 +36,18 @@ export function LargeNameFooter() {
       <div className="container mx-auto max-w-[1200px] relative z-10 flex flex-col md:flex-row md:flex-wrap justify-between md:items-start">
         {/* Left / Logo block */}
         <div className="mb-8 md:mb-0 flex flex-col items-start order-1 md:order-1 md:w-1/2">
-          <a href="#" className="flex items-center gap-3">
-            <img src="/favicon.svg" alt="Void Vault Mark" className="w-8 h-8 object-contain" />
-            <h2 className="text-xl font-bold tracking-tight text-white font-mono">VOID VAULT</h2>
-          </a>
+          <button 
+            onClick={handleNav('overview')} 
+            className="flex items-center gap-3 cursor-pointer group text-left"
+          >
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#17181c] border border-orange-500/30 shadow-[0_0_15px_rgba(255,86,0,0.2)] group-hover:border-orange-500/60 transition-all p-1.5">
+              <VoidVaultMark className="w-full h-full text-orange-500 group-hover:scale-105 transition-transform" variant="orange" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold tracking-tight text-white font-sans uppercase group-hover:text-orange-400 transition-colors">VOID VAULT</h2>
+              <p className="text-[10px] font-mono text-neutral-400 tracking-wider">NTRO PS SIH26149 • Team eMitra</p>
+            </div>
+          </button>
 
           <p className="text-sm text-neutral-400 mt-3 max-w-[340px] leading-relaxed">
             Hardware-Enforced Cryptographic Data Neutralization & Closed-Loop Forensic Verification. Built for SIH 2026 Problem Statement PS-26149 (NTRO).
@@ -127,24 +144,25 @@ export function LargeNameFooter() {
         {/* Right / Links Columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 order-3 md:order-2 md:w-1/2 md:justify-end md:ml-auto z-10">
           <div>
-            <h3 className="font-semibold text-neutral-200 text-xs font-mono uppercase tracking-wider mb-3">Navigation</h3>
+            <h3 className="font-semibold text-neutral-200 text-xs font-mono uppercase tracking-wider mb-3">Sections</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#demo" className="text-neutral-400 hover:text-white transition-colors">Live Prototype</a></li>
-              <li><a href="#diagrams" className="text-neutral-400 hover:text-white transition-colors">Schematics</a></li>
-              <li><a href="#research" className="text-neutral-400 hover:text-white transition-colors">Research (52 Papers)</a></li>
-              <li><a href="#benchmarks" className="text-neutral-400 hover:text-white transition-colors">Benchmarks</a></li>
-              <li><a href="#impact" className="text-neutral-400 hover:text-white transition-colors">Govt & NTRO Impact</a></li>
+              <li><button onClick={handleNav('screens')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">Screenshots</button></li>
+              <li><button onClick={handleNav('evidence')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">Evidence (Part C)</button></li>
+              <li><button onClick={handleNav('ps-matrix')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">PS Matrix</button></li>
+              <li><button onClick={handleNav('docs')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">18 Docs & Specs</button></li>
+              <li><button onClick={handleNav('team')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">Team eMitra</button></li>
+              <li><button onClick={handleNav('standards')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">17 Standards</button></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-neutral-200 text-xs font-mono uppercase tracking-wider mb-3">Repository Files</h3>
+            <h3 className="font-semibold text-neutral-200 text-xs font-mono uppercase tracking-wider mb-3">Public Hub</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://github.com/nishchaydev/sih2026" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1">GitHub Repo <ExternalLink className="w-3 h-3" /></a></li>
-              <li><a href="https://github.com/nishchaydev/sih2026/tree/main/ps149" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">Rust Core (ps149)</a></li>
-              <li><a href="https://github.com/nishchaydev/sih2026/tree/main/gui" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">Tauri GUI</a></li>
-              <li><a href="https://github.com/nishchaydev/sih2026/tree/main/research" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">Research Dossiers</a></li>
-              <li><a href="https://github.com/nishchaydev/sih2026/tree/main/docs" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">Docs & Specs</a></li>
+              <li><a href="https://github.com/nishchaydev/Void-Vault" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1">Public Repo <ExternalLink className="w-3 h-3" /></a></li>
+              <li><button onClick={handleNav('pack')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">Offline Pack</button></li>
+              <li><button onClick={handleNav('faq')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">Evaluator FAQ</button></li>
+              <li><button onClick={handleNav('demo')} className="text-neutral-400 hover:text-white transition-colors cursor-pointer text-left">Video Walkthrough</button></li>
+              <li><a href="https://github.com/nishchaydev/Void-Vault/blob/main/ps-matrix.md" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors inline-flex items-center gap-1">PS Traceability <ExternalLink className="w-3 h-3" /></a></li>
             </ul>
           </div>
 

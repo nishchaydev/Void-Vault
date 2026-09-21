@@ -152,6 +152,8 @@ export const documentsList = [
 ];
 
 export function DocsIndex() {
+  const BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+
   return (
     <section id="docs" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.04]">
       {/* Header */}
@@ -172,7 +174,7 @@ export function DocsIndex() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {documentsList.map((doc, idx) => {
           const ghUrl = `${GITHUB_DOCS_BASE}/${doc.file}`;
-          const localUrl = `/Void-Vault/docs/${doc.file}`;
+          const localUrl = `${BASE}/docs/${doc.file}`;
 
           return (
             <div

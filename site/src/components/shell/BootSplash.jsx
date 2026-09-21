@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ShaderAnimation } from '../ui/shader-animation';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { VoidVaultMark } from '../ui/VoidVaultLogo';
 import { Shield, Sparkles, Terminal, ChevronRight, X } from 'lucide-react';
 
 const TELEMETRY_LOGS = [
@@ -58,24 +59,24 @@ export function BootSplash({ onDone, duration = 2800 }) {
     }, stepTime);
 
     return () => clearInterval(progressInterval);
-  }, [reduced, duration]);
+  }, [duration, reduced]);
 
-  // Main lifecycle timeout
+  // Auto-finish after timer completes
   useEffect(() => {
-    const effectiveDuration = reduced ? 900 : duration;
+    const totalTime = reduced ? 800 : duration;
     timerRef.current = setTimeout(() => {
       setLeaving(true);
-    }, effectiveDuration);
+    }, totalTime);
 
     return () => clearTimeout(timerRef.current);
-  }, [reduced, duration]);
+  }, [duration, reduced]);
 
-  // Clean unmount after exit transition
+  // Once leaving transition finishes, invoke callback
   useEffect(() => {
     if (!leaving) return;
     const exitTimer = setTimeout(() => {
-      if (onDone) onDone();
-    }, reduced ? 250 : 650);
+      onDone?.();
+    }, reduced ? 250 : 600);
     return () => clearTimeout(exitTimer);
   }, [leaving, onDone, reduced]);
 
@@ -161,23 +162,11 @@ export function BootSplash({ onDone, duration = 2800 }) {
         {/* Animated Brand Mark / Emblem */}
         <div className="relative mb-6">
           <div className="absolute -inset-4 bg-orange-500/20 rounded-full blur-2xl animate-pulse" />
-          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-b from-[#1f1610] to-[#120c08] border border-orange-500/30 flex items-center justify-center shadow-2xl shadow-orange-950/80">
-            <svg
-              className="w-9 h-9 text-orange-500 drop-shadow-[0_0_12px_rgba(255, 86, 0,0.6)]"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6 8L20 34L34 8H26L20 22L14 8H6Z"
-                fill="currentColor"
-              />
-              <path
-                d="M13 8L20 20L27 8H22L20 12L18 8H13Z"
-                fill="#FF5600"
-                opacity="0.9"
-              />
-            </svg>
+          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-b from-[#1f1610] to-[#120c08] border border-orange-500/30 flex items-center justify-center shadow-2xl shadow-orange-950/80 p-3">
+            <VoidVaultMark
+              className="w-full h-full text-orange-500 drop-shadow-[0_0_12px_rgba(255,86,0,0.7)]"
+              variant="orange"
+            />
           </div>
         </div>
 

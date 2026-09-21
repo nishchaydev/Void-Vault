@@ -1,44 +1,148 @@
-
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useRouter } from '../context/RouterContext';
+import { VoidVaultMark } from './ui/VoidVaultLogo';
+import { Menu, X, ExternalLink, ShieldCheck } from 'lucide-react';
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { currentRoute, navigate } = useRouter();
+
+  const NAV_ITEMS = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'screens', label: 'Screenshots' },
+    { id: 'evidence', label: 'Evidence (Part C)' },
+    { id: 'ps-matrix', label: 'PS Matrix' },
+    { id: 'docs', label: 'Docs' },
+    { id: 'demo', label: 'Demo' },
+    { id: 'standards', label: 'Standards' },
+    { id: 'team', label: 'Team' },
+    { id: 'faq', label: 'FAQ' },
+    { id: 'pack', label: 'Pack' },
+  ];
+
+  const handleNav = (routeId) => {
+    navigate(routeId);
+    setOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#050505]/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-white/[0.08] bg-[#0c0d0e]/85 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <div className="flex items-center gap-4">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-950 border border-orange-500/30">
-            <svg className="w-5 h-5 text-orange-500" viewBox="0 0 40 40" fill="none"><path d="M6 8L20 34L34 8H26L20 22L14 8H6Z" fill="currentColor"/><path d="M13 8L20 20L27 8H22L20 12L18 8H13Z" fill="#FF5600" opacity="0.9"/></svg>
+        
+        {/* Brand Logo & Tag */}
+        <div 
+          onClick={() => handleNav('overview')}
+          className="flex items-center gap-3 cursor-pointer group"
+        >
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#17181c] border border-orange-500/30 shadow-[0_0_15px_rgba(255,86,0,0.2)] group-hover:border-orange-500/60 transition-all p-1.5">
+            <VoidVaultMark className="w-full h-full text-orange-500 group-hover:scale-105 transition-transform drop-shadow-[0_0_8px_rgba(255,86,0,0.5)]" variant="orange" />
           </div>
-          <span className="font-bold tracking-widest text-white uppercase text-sm">VOID VAULT</span>
-          <div className="hidden lg:flex items-center ml-4 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/10">
-            <span className="text-[10px] font-mono text-orange-500">SIH 2026 • PS SIH26149 (NTRO) • Team eMitra</span>
+          <div>
+            <span className="font-black tracking-[0.14em] text-white uppercase text-sm font-sans block group-hover:text-orange-400 transition-colors">
+              VOID VAULT
+            </span>
+            <span className="text-[9px] font-mono text-neutral-400 tracking-wider hidden sm:block">
+              NTRO PS-26149 • Team eMitra
+            </span>
           </div>
         </div>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-400">
-          <a href="#docs" className="hover:text-orange-500 transition-colors">Docs</a>
-          <a href="#screens" className="hover:text-orange-500 transition-colors">Screenshots</a>
-          <a href="#demo" className="hover:text-orange-500 transition-colors">Demo</a>
-          <a href="#team" className="hover:text-orange-500 transition-colors">Team</a>
-          <a href="#faq" className="hover:text-orange-500 transition-colors">FAQ</a>
-          <a href="#pack" className="hover:text-orange-500 transition-colors">Pack</a>
+
+        {/* Desktop Navigation Tabs */}
+        <nav className="hidden xl:flex items-center gap-1 bg-white/[0.02] p-1 rounded-xl border border-white/[0.05]">
+          {NAV_ITEMS.map((item) => {
+            const isActive = currentRoute === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleNav(item.id)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40 font-bold shadow-[0_0_12px_rgba(255,86,0,0.15)]'
+                    : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </nav>
-        <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-neutral-400 hover:text-white">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+
+        {/* Secondary Navigation for Lg screens */}
+        <nav className="hidden md:flex xl:hidden items-center gap-1.5">
+          {NAV_ITEMS.slice(0, 6).map((item) => {
+            const isActive = currentRoute === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleNav(item.id)}
+                className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-colors cursor-pointer ${
+                  isActive
+                    ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40 font-semibold'
+                    : 'text-neutral-400 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+          <button
+            onClick={() => setOpen(!open)}
+            className="px-2 py-1 rounded-lg text-xs font-mono text-neutral-400 hover:text-white border border-white/10"
+          >
+            More ▾
+          </button>
+        </nav>
+
+        {/* External GitHub Link */}
+        <div className="hidden lg:flex items-center gap-2">
+          <a
+            href="https://github.com/nishchaydev/Void-Vault"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-orange-500/10 hover:border-orange-500/30 hover:text-orange-400 text-xs font-mono text-neutral-300 transition-colors"
+          >
+            <span>GitHub</span>
+            <ExternalLink className="w-3 h-3 text-neutral-400" />
+          </a>
+        </div>
+
+        {/* Mobile Hamburger Toggle */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 text-neutral-400 hover:text-white rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
+          aria-label="Toggle Menu"
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
       {open && (
-        <div className="md:hidden border-b border-white/10 bg-[#050505] px-4 py-4 space-y-4">
-          <a href="#docs" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Docs</a>
-          <a href="#screens" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Screenshots</a>
-          <a href="#demo" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Demo</a>
-          <a href="#team" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Team</a>
-          <a href="#faq" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">FAQ</a>
-          <a href="#pack" onClick={() => setOpen(false)} className="block text-sm text-neutral-400 hover:text-white">Pack</a>
+        <div className="md:hidden border-b border-white/10 bg-[#0c0d0e] px-4 py-4 space-y-1 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+          <div className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest px-3 pb-2 mb-1 border-b border-white/5">
+            Navigation Pages
+          </div>
+          {NAV_ITEMS.map((item) => {
+            const isActive = currentRoute === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleNav(item.id)}
+                className={`w-full text-left px-3 py-2 rounded-lg text-sm font-mono flex items-center justify-between transition-colors ${
+                  isActive
+                    ? 'bg-orange-500/15 text-orange-400 font-bold border border-orange-500/30'
+                    : 'text-neutral-300 hover:bg-white/5 hover:text-white'
+                }`}
+              >
+                <span>{item.label}</span>
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />}
+              </button>
+            );
+          })}
         </div>
       )}
     </header>
   );
 }
+
 export default Header;

@@ -6,7 +6,7 @@ export function ContactFooter() {
     <section className="py-12 border-t border-white/10 bg-[#050505] text-center">
       <div className="max-w-4xl mx-auto px-4">
         <p className="text-neutral-400 text-sm mb-4">
-          To request source access or for technical inquiries, contact Team eMitra at <a href="mailto:" className="text-orange-500 hover:underline">pending@email.com</a>
+          To request source access, verification data, or technical inquiries, contact Team eMitra at <a href="mailto:emitra.sih2026@gmail.com" className="text-orange-500 hover:underline">emitra.sih2026@gmail.com</a> or open an issue on <a href="https://github.com/nishchaydev/Void-Vault/issues" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:underline">GitHub</a>.
         </p>
         <p className="text-neutral-500 text-xs mb-8">
           License: CC BY-NC-ND 4.0

@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { GlowingEffect } from './ui/glowing-effect';
 import { Eye, ExternalLink, Shield, HardDrive, Trash2, Search, FileCheck, Layers, X } from 'lucide-react';
 
+const BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+
 const realScreenshots = [
   {
     title: "Forensic Command Cockpit (Dashboard)",
     module: "Core Dashboard",
     category: "System Overview",
     desc: "Real-time storage controller telemetry, active device enumeration, and quick-action module launchpad.",
-    img: "/Void-Vault/screenshots/dashboard.png",
+    img: `${BASE}/screenshots/dashboard.png`,
     icon: HardDrive,
   },
   {
@@ -16,7 +18,7 @@ const realScreenshots = [
     module: "Module 1",
     category: "Drive Sanitization",
     desc: "Direct I/O hardware controller execution with 17 global sanitization standards and boot disk safety lockout.",
-    img: "/Void-Vault/screenshots/erasure_live.png",
+    img: `${BASE}/screenshots/erasure_live.png`,
     icon: Shield,
   },
   {
@@ -24,7 +26,7 @@ const realScreenshots = [
     module: "Module 2",
     category: "File Shredding",
     desc: "Granular file extent shredding, NTFS Alternate Data Streams (ADS) enumeration, and MFT record zeroing.",
-    img: "/Void-Vault/screenshots/shredder_live.png",
+    img: `${BASE}/screenshots/shredder_live.png`,
     icon: Trash2,
   },
   {
@@ -32,7 +34,7 @@ const realScreenshots = [
     module: "Module 3",
     category: "Carving & Forensics",
     desc: "Bifragment Gap Carving (BGC) engine, SIMD 256-bin Shannon entropy scoring, and structural AST validation.",
-    img: "/Void-Vault/screenshots/recovery_live.png",
+    img: `${BASE}/screenshots/recovery_live.png`,
     icon: Search,
   },
   {
@@ -40,15 +42,15 @@ const realScreenshots = [
     module: "Assurance",
     category: "Compliance",
     desc: "Granular audit matrix for NIST SP 800-88 Rev. 2, IEEE 2883-2022, and ISO/IEC 27037:2012.",
-    img: "/Void-Vault/screenshots/compliance_live.png",
+    img: `${BASE}/screenshots/compliance_live.png`,
     icon: FileCheck,
   },
   {
-    title: "Closed-Loop Forensic Pipeline Architecture",
-    module: "Verification",
-    category: "Architecture",
-    desc: "Erase → Carve back → Compare artifacts → Issue BSA 2023 Sec 63 cryptographic certificate.",
-    img: "/Void-Vault/screenshots/slide_01.png",
+    title: "Granular File & Folder Shredder (Cluster Slack Purge)",
+    module: "Module 2",
+    category: "Anti-Forensics",
+    desc: "Target explorer selecting confidential directories, applying DoD 5220.22-M passes with MFT obfuscation.",
+    img: `${BASE}/screenshots/shredder.png`,
     icon: Layers,
   },
 ];

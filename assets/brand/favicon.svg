@@ -1,5 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
-  <rect width="40" height="40" rx="8" fill="#0A0F1A"/>
-  <path d="M6 8L20 34L34 8H26L20 22L14 8H6Z" fill="#FF5600"/>
-  <path d="M13 8L20 20L27 8H22L20 12L18 8H13Z" fill="#FF7A33" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="20" fill="#0C0D0E"/>
+  <g transform="translate(10, 10) scale(0.8)">
+    <path
+      d="M 46.8 33.2 C 40.5 24.8, 23.2 11.5, 6.8 2.2 C 3.8 0.5, 1.5 2.2, 1.5 5.8 L 1.5 58.5 C 1.5 63.8, 5.2 68.2, 9.8 71.8 L 46.5 98.8 Z"
+      fill="url(#favLeftGrad)"
+    />
+    <path
+      d="M 53.2 33.2 C 59.5 24.8, 76.8 11.5, 93.2 2.2 C 96.2 0.5, 98.5 2.2, 98.5 5.8 L 98.5 58.5 C 98.5 63.8, 94.8 68.2, 90.2 71.8 L 53.5 98.8 Z"
+      fill="url(#favRightGrad)"
+    />
+  </g>
+  <defs>
+    <linearGradient id="favLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A33"/>
+      <stop offset="100%" stop-color="#FF5600"/>
+    </linearGradient>
+    <linearGradient id="favRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFA875"/>
+      <stop offset="100%" stop-color="#D44200"/>
+    </linearGradient>
+  </defs>
 </svg>
