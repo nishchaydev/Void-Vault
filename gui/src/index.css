@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f5f1ec;
+  --color-surface: #ffffff;
+  --color-ink: #111111;
+  --color-ink-muted: #626260;
+  --color-ink-subtle: #7b7b78;
+  --color-hairline: #d3cec6;
+  --color-accent: #ff5600;
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+  --color-report-blue: #2563eb;
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Glassmorphism & Refined Micro-Interactions */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(17, 17, 17, 0.04), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(211, 206, 198, 0.65);
+}
+
+.glass-card-interactive {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-interactive:hover {
+  background: rgba(255, 255, 255, 0.92);
+  transform: translateY(-1.5px);
+  box-shadow: 0 10px 28px -4px rgba(17, 17, 17, 0.07);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(211, 206, 198, 0.7);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(98, 98, 96, 0.5);
+}

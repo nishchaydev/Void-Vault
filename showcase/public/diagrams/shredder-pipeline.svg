@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06090E" />
+      <stop offset="100%" stop-color="#0E1624" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111B2B" />
+      <stop offset="100%" stop-color="#090E17" />
+    </linearGradient>
+    <marker id="arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" rx="12" fill="url(#bgGrad2)" stroke="#1E293B" stroke-width="2" />
+
+  <!-- Header -->
+  <text x="50" y="52" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="1">4-PHASE FORENSIC FILE SHREDDER PIPELINE</text>
+  <text x="50" y="76" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12">Neutralizing Alternate Data Streams (ADS), Cluster Slack, and Master File Table (MFT) Residual Traces</text>
+
+  <!-- Flow Grid: 4 Vertical Columns -->
+  <!-- PHASE 1: ADS PURGE -->
+  <g transform="translate(45, 120)">
+    <rect width="205" height="380" rx="8" fill="url(#cardGrad)" stroke="#38BDF8" stroke-width="1.5" />
+    <rect width="205" height="38" rx="8" fill="#0284C7" fill-opacity="0.25" />
+    <text x="14" y="24" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">PHASE 1: ADS PURGE</text>
+
+    <text x="14" y="65" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Hidden Stream Scrub</text>
+    <text x="14" y="90" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Alternate Data Streams</text>
+    <text x="14" y="110" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• NTFS Zone.Identifier</text>
+    <text x="14" y="130" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• MotW Mark of the Web</text>
+    <text x="14" y="150" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Forensic metadata payload</text>
+
+    <!-- Technical Code Callout -->
+    <rect x="10" y="200" width="185" height="155" rx="5" fill="#05080E" stroke="#1E293B" />
+    <text x="18" y="222" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">WIN32 API HOOK</text>
+    <text x="18" y="245" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">FindFirstStreamW()</text>
+    <text x="18" y="265" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">FindNextStreamW()</text>
+    <text x="18" y="290" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Enumerates all streams.</text>
+    <text x="18" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Truncates &amp; zeroes</text>
+    <text x="18" y="330" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9">Streams = 0 residual</text>
+  </g>
+
+  <!-- ARROW 1 -> 2 -->
+  <path d="M 252 300 L 282 300" stroke="#38BDF8" stroke-width="2" marker-end="url(#arr2)" />
+
+  <!-- PHASE 2: CLUSTER OVERWRITE -->
+  <g transform="translate(285, 120)">
+    <rect width="205" height="380" rx="8" fill="url(#cardGrad)" stroke="#10B981" stroke-width="1.5" />
+    <rect width="205" height="38" rx="8" fill="#059669" fill-opacity="0.25" />
+    <text x="14" y="24" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">PHASE 2: OVERWRITE</text>
+
+    <text x="14" y="65" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Cryptographic Wiping</text>
+    <text x="14" y="90" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 1 to 35-Pass Overwrite</text>
+    <text x="14" y="110" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• DoD 5220.22-M 3-Pass</text>
+    <text x="14" y="130" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Gutmann 35-Pass</text>
+    <text x="14" y="150" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• PRNG Random (ChaCha20)</text>
+
+    <!-- Technical Code Callout -->
+    <rect x="10" y="200" width="185" height="155" rx="5" fill="#05080E" stroke="#1E293B" />
+    <text x="18" y="222" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">UNCACHED WRITE</text>
+    <text x="18" y="245" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">WRITE_THROUGH</text>
+    <text x="18" y="265" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">FlushFileBuffers()</text>
+    <text x="18" y="290" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Bypasses OS memory cache.</text>
+    <text x="18" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Forces physical magnetic /</text>
+    <text x="18" y="330" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9">flash cell commit.</text>
+  </g>
+
+  <!-- ARROW 2 -> 3 -->
+  <path d="M 492 300 L 522 300" stroke="#10B981" stroke-width="2" marker-end="url(#arr2)" />
+
+  <!-- PHASE 3: SLACK SPACE ZEROING -->
+  <g transform="translate(525, 120)">
+    <rect width="205" height="380" rx="8" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" />
+    <rect width="205" height="38" rx="8" fill="#D97706" fill-opacity="0.25" />
+    <text x="14" y="24" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">PHASE 3: SLACK ZERO</text>
+
+    <text x="14" y="65" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">RAM &amp; File Slack</text>
+    <text x="14" y="90" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Cluster Boundary Gap</text>
+    <text x="14" y="110" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 4096-byte Cluster Slack</text>
+    <text x="14" y="130" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Prevents Carver BGC</text>
+    <text x="14" y="150" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Zeroed to Last Sector</text>
+
+    <!-- Technical Code Callout -->
+    <rect x="10" y="200" width="185" height="155" rx="5" fill="#05080E" stroke="#1E293B" />
+    <text x="18" y="222" fill="#FBBF24" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">SECTOR ALIGNMENT</text>
+    <text x="18" y="245" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">EOF → (EOF | 0xFFF)</text>
+    <text x="18" y="265" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">SetFilePointerEx()</text>
+    <text x="18" y="290" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Pads zeroes from logical EOF</text>
+    <text x="18" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">to physical sector edge.</text>
+    <text x="18" y="330" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9">Slack = 0 residual B</text>
+  </g>
+
+  <!-- ARROW 3 -> 4 -->
+  <path d="M 732 300 L 762 300" stroke="#F59E0B" stroke-width="2" marker-end="url(#arr2)" />
+
+  <!-- PHASE 4: MFT RECORD SCRAMBLE -->
+  <g transform="translate(765, 120)">
+    <rect width="195" height="380" rx="8" fill="url(#cardGrad)" stroke="#A855F7" stroke-width="1.5" />
+    <rect width="195" height="38" rx="8" fill="#7E22CE" fill-opacity="0.25" />
+    <text x="14" y="24" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">PHASE 4: MFT PURGE</text>
+
+    <text x="14" y="65" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Metadata Scrambling</text>
+    <text x="14" y="90" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 5-Pass Rename Chain</text>
+    <text x="14" y="110" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• 01010101.tmp → a7f9...</text>
+    <text x="14" y="130" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• Timestamps Zeroed (1601)</text>
+    <text x="14" y="150" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11">• MFT $STANDARD_INFO wiped</text>
+
+    <!-- Technical Code Callout -->
+    <rect x="10" y="200" width="175" height="155" rx="5" fill="#05080E" stroke="#1E293B" />
+    <text x="16" y="222" fill="#C084FC" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600">TIME STAMP NULL</text>
+    <text x="16" y="245" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">SetFileTime(0, 0, 0)</text>
+    <text x="16" y="265" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="9">DeleteFileW()</text>
+    <text x="16" y="290" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">Destroys chronological</text>
+    <text x="16" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10">timeline indexing in MFT.</text>
+    <text x="16" y="330" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="9">Timeline unrecoverable</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="50" y="585" fill="#64748B" font-family="'Inter', sans-serif" font-size="11">Architecture Source: docs/diagrams/shredder-pipeline.md • Void Vault File Neutralization Subsystem • NTRO PS-26149</text>
+</svg>
