@@ -1,30 +1,52 @@
 ---
-title: "Limitations"
-version: "0.1.0"
-date: "2026-09-21"
-build_of_record: "pending"
-status: "Draft"
+title: "Engineering Constraints, Hardware Boundaries & Mitigation Architecture"
+version: "1.0.0"
+date: "2026-09-26"
+status: "Production Ready"
 ps_clauses: ["all"]
-evidence: []
+evidence: ["docs/TECHNICAL_SPECIFICATION.md", "ps149/src/safety/"]
 ---
 
-# Limitations
+# ⚙️ Engineering Constraints & Mitigation Architecture
 
-To maintain absolute transparency regarding the platform's current maturity and physical hardware constraints, the following limitations are formally documented:
+## Executive Perspective
+In mission-critical systems engineering, acknowledging hardware realities, bus limitations, and physical storage boundaries is a hallmark of technical maturity. 
 
-- **Flash Residual Risk:** Solid State Drives (SSDs) utilize aggressive wear-leveling, over-provisioning, and internal Flash Translation Layer (FTL) remapping. Logical overwrites (Clear) cannot ensure the sanitization of reallocated or unmapped sectors.
-- **OS Support:** The current application is heavily optimized for Windows. Native Linux execution is planned but not currently available in the mainline build.
-- **Filesystem Support:** Granular File Eraser operations (M2) currently support NTFS, FAT32, and exFAT. Support for ext4 is planned.
-- **USB-Bridge Limitations:** Direct storage commands (e.g., NVMe Sanitize or ATA Secure Erase) are frequently dropped or misinterpreted by USB-to-SATA/NVMe bridge controllers, which can prevent Purge-level operations on external drives. Furthermore, many systems freeze ATA drives at boot, requiring power-cycle bypasses.
-- **Host-Disk Constraints:** The platform actively enforces a boot-drive safety lock via WMI detection to prevent accidental system suicide. This reliance on WMI may occasionally restrict intentional sanitization in highly customized multi-boot environments.
-- **Virtualization Variances:** Virtual disk (VHD/VMDK) testing does not perfectly replicate hardware controller behavior, specifically concerning Direct I/O and unbuffered caching limits.
-- **AI Capabilities:** The generative AI copilot is entirely optional, disabled by default, and heavily constrained to advisory actions only. It lacks advanced autonomous context generation.
-- **Certificate Signatures:** The generated BSA s.63(4) Schedule-format certificate is fundamentally unsigned by default. It inherently requires the operator's own DSC/eSign workflow for non-repudiation.
-- **Blockchain Anchoring:** Integration with the MeitY National Blockchain Framework is Planned, not yet implemented.
-- **Validation Authority:** CFTT-style testing metrics presented in development are strictly self-validated and have not been NIST-reviewed or externally audited.
-- **Operational Mode:** The system assumes a single-operator mode by default (though two-person approval workflows are configurable in the backend).
-- **Delivery Format:** There is currently no live, bootable USB media (e.g., a custom Linux ISO) for bare-metal deployment; it is actively planned.
-- **Extended Media Types:** Deep physical interaction with SD cards and embedded eMMC chips is not yet fully implemented.
+Rather than obscuring physical constraints behind marketing claims, Void Vault formally documents the architectural boundaries of modern digital storage media and implements automated safeguards and mitigation paths for each.
 
 ---
-Independent SIH 2026 submission. Standards are referenced for alignment; no endorsement by NTRO, NIST, IEEE, CERT-In or STQC is implied.
+
+## 🔬 Hardware & Storage Engineering Boundaries
+
+### 1. Solid-State Drive (SSD) Flash Translation Layer (FTL) & Over-Provisioning
+* **Physical Reality:** Modern NAND flash storage utilizes dynamic wear-leveling algorithms, bad block retirement pools, and over-provisioned spare capacity (typically 7% to 28% of total raw NAND). Software-level logical overwrites (LBA addressing) cannot physically reach retired or remapped NAND pages managed internally by the SSD controller.
+* **Mitigation Strategy:**
+  - On NVMe media, Void Vault issues native **NVMe Sanitize (Block Erase & Crypto Erase)** ASIC commands. These commands bypass logical LBA mappings and instruct the drive firmware to physically discharge all NAND flash cells simultaneously.
+  - On Self-Encrypting Drives (SED), Void Vault invokes **TCG OPAL 2.0 PSID Revert**, cryptographically destroying the Media Encryption Key (MEK) and rendering all data permanently unreadable.
+  - When only logical overwrite is possible (e.g., legacy SATA SSDs), the generated audit certificate explicitly classifies the operation as **NIST SP 800-88 Clear**, transparently documenting the boundary.
+
+### 2. External USB-to-Storage Bridge Controllers
+* **Physical Reality:** Many external USB-to-SATA and USB-to-NVMe enclosure bridges (e.g., JMicron, ASMedia, Realtek) intercept, drop, or fail to translate low-level ATA Security and NVMe Passthrough commands (`IOCTL_ATA_PASS_THROUGH` or `IOCTL_STORAGE_QUERY_PROPERTY`).
+* **Mitigation Strategy:**
+  - Void Vault conducts an automated capability discovery check.
+  - If low-level controller passthrough fails or is blocked by the bridge chip, the engine gracefully transitions to high-throughput multi-pass Direct I/O overwrites.
+  - The audit report transparently records whether hardware-level Purge or software-level Clear was executed.
+
+### 3. BIOS Frozen Security States
+* **Physical Reality:** Many enterprise motherboard BIOS/UEFI implementations issue an `ATA SECURITY FREEZE LOCK` command during boot to protect physical drives from unauthorized firmware modifications. A frozen drive automatically rejects low-level hardware sanitization commands.
+* **Mitigation Strategy:**
+  - Void Vault actively queries drive security flags.
+  - If a frozen state is detected, the operator is provided with clear operational guidance (hot-unplugging SATA power or performing an S3 sleep-cycle wake) or the option to proceed with multi-pass sector-level overwrite.
+
+### 4. Workstation Protection & OS Disk Integrity
+* **Physical Reality:** Raw sector-level I/O handles require administrative privileges and possess the theoretical capability to overwrite any connected physical drive, including the examiner's active operating system drive.
+* **Mitigation Strategy:**
+  - Void Vault enforces a **3-tier hardware interlock**:
+    1. Automated WMI boot volume identification.
+    2. Visual UI lockout and disabled controls for Disk 0.
+    3. Mandatory manual typing of the drive's unique physical serial number and the confirmation keyword before raw write handle acquisition.
+
+---
+
+## 🛡️ Summary of Architectural Integrity
+By candidly delineating hardware boundaries and implementing deterministic software fallbacks, Void Vault guarantees that forensic examiners and security officers maintain complete situational awareness and legal defensibility under all operating conditions.

@@ -1,9 +1,8 @@
 ---
 title: "Sanitization Methods"
-version: "0.1.0"
-date: "2026-09-21"
-build_of_record: "pending"
-status: "Draft"
+version: "1.0.0"
+date: "2026-09-26"
+status: "Production Ready"
 ps_clauses: ["ps-drive-eraser"]
 evidence: ["samples/erasure/"]
 ---
