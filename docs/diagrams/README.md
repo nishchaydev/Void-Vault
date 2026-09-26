@@ -8,10 +8,10 @@ This directory contains the complete set of native **Mermaid UML diagrams** for 
 
 | Diagram File | Category | Description | Primary Slide Placement |
 | :--- | :--- | :--- | :---: |
-| **[system-architecture.md](file:///n:/SIH2026149/docs/diagrams/system-architecture.md)** | System Design | Layered architecture showing all 3 core modules, kernel I/O, verification, blockchain, and AI layers | **Slide 3 (Technical Approach)** |
-| **[closed-loop-flow.md](file:///n:/SIH2026149/docs/diagrams/closed-loop-flow.md)** | Core Concept | The closed-loop verification cycle (Erase $\to$ Carve $\to$ Certify) contrasted with traditional tools | **Slide 2 (Proposed Solution)** |
-| **[shredder-pipeline.md](file:///n:/SIH2026149/docs/diagrams/shredder-pipeline.md)** | Anti-Forensics | 4-Phase forensic file shredding pipeline (ADS $\to$ Overwrite $\to$ Slack $\to$ MFT) | **Slide 3 (Technical Approach)** |
-| **[battle-demo-and-internals.md](file:///n:/SIH2026149/docs/diagrams/battle-demo-and-internals.md)** | Live Demo & Algorithms | Sequence diagram of the 60s Live Battle Demo, batched-read Carver acceleration pipeline, and Merkle Hash Chain | **Slides 3, 4, 6** |
+| **[system-architecture.md](./system-architecture.md)** | System Design | Layered architecture showing all 3 core modules, kernel I/O, verification, blockchain, and AI layers | **Slide 3 (Technical Approach)** |
+| **[closed-loop-flow.md](./closed-loop-flow.md)** | Core Concept | The closed-loop verification cycle (Erase $\to$ Carve $\to$ Certify) contrasted with traditional tools | **Slide 2 (Proposed Solution)** |
+| **[shredder-pipeline.md](./shredder-pipeline.md)** | Anti-Forensics | 4-Phase forensic file shredding pipeline (ADS $\to$ Overwrite $\to$ Slack $\to$ MFT) | **Slide 3 (Technical Approach)** |
+| **[battle-demo-and-internals.md](./battle-demo-and-internals.md)** | Live Demo & Algorithms | Sequence diagram of the 60s Live Battle Demo, batched-read Carver acceleration pipeline, and Merkle Hash Chain | **Slides 3, 4, 6** |
 
 ---
 
