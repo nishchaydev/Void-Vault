@@ -1,0 +1,15 @@
+{
+  "id": "REP-882194A2",
+  "type": "NIST SP 800-88 Clear",
+  "target": "SanDisk Cruzer Force USB Device (\\.\\PHYSICALDRIVE1)",
+  "serial": "4C530000031222122494",
+  "capacity": "14.7 GB (30,828,735 sectors)",
+  "date": "2026-09-06T11:55:00Z",
+  "standard": "NIST SP 800-88 Rev. 1 Clear (Single-Pass 0x00)",
+  "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hash_algorithm": "xxHash3-128 & SHA-256",
+  "verified": true,
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "compliance": "IEEE 2883-2022 & NIST SP 800-88 Rev. 1 Compliant"
+}

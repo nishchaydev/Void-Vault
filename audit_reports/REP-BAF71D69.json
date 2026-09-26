@@ -1,0 +1,19 @@
+{
+  "bytes_overwritten": 2800809410560,
+  "capacity": "74.5 GB",
+  "compliance": "IEEE 2883-2022 & NIST SP 800-88 Rev. 1 Compliant",
+  "date": "2026-09-24T12:35:26.775145200+00:00",
+  "hash": "fd5ee061c8433a0f33b202d302b65caa",
+  "hash_algorithm": "xxHash3-128 & SHA-256",
+  "id": "REP-BAF71D69",
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "passes": 35,
+  "scope": "Full Drive Overwrite (100% LBAs)",
+  "sectors_zeroed": 5470330880,
+  "serial": "116AC2101219",
+  "standard": "Gutmann (35-Pass)",
+  "target": "   Mass Storage Device USB Device (\\\\.\\D:)",
+  "type": "Secure Erasure",
+  "verified": true
+}

@@ -1,0 +1,18 @@
+{
+  "bytes_overwritten": 50331648,
+  "capacity": "14.7 GB",
+  "compliance": "IEEE 2883-2022 & NIST SP 800-88 Rev. 1 Compliant",
+  "date": "2026-09-06T12:44:52.919681500+00:00",
+  "hash": "741c4555a37d2b57040c7d203cd736df",
+  "hash_algorithm": "xxHash3-128 & SHA-256",
+  "id": "REP-177ADDDE",
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "passes": 3,
+  "sectors_zeroed": 98304,
+  "serial": "4C530000031222122494",
+  "standard": "DoD 5220.22-M (3-Pass)",
+  "target": "SanDisk Cruzer Force USB Device (\\\\.\\D:)",
+  "type": "Secure Erasure",
+  "verified": true
+}

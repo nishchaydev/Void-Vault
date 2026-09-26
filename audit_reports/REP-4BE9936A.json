@@ -1,0 +1,19 @@
+{
+  "bytes_overwritten": 33554432,
+  "capacity": "74.5 GB",
+  "compliance": "IEEE 2883-2022 & NIST SP 800-88 Rev. 1 Compliant",
+  "date": "2026-09-24T12:16:15.264105900+00:00",
+  "hash": "fd5ee061c8433a0f33b202d302b65caa",
+  "hash_algorithm": "xxHash3-128 & SHA-256",
+  "id": "REP-4BE9936A",
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "passes": 1,
+  "scope": "Quick Forensic Purge",
+  "sectors_zeroed": 65536,
+  "serial": "116AC2101219",
+  "standard": "Fast Wipe (Headers & Footers)",
+  "target": "   Mass Storage Device USB Device (\\\\.\\D:)",
+  "type": "Secure Erasure",
+  "verified": true
+}

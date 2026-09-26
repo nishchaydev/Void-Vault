@@ -1,0 +1,19 @@
+{
+  "bytes_overwritten": 7755268096,
+  "capacity": "7.2 GB",
+  "compliance": "IEEE 2883-2022 & NIST SP 800-88 Rev. 1 Compliant",
+  "date": "2026-09-08T05:55:18.126356900+00:00",
+  "hash": "c0d8ab7d67de4d0528b60dae5a1fc350",
+  "hash_algorithm": "xxHash3-128 & SHA-256",
+  "id": "REP-8C1C7B03",
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "passes": 1,
+  "scope": "Full Drive Overwrite (100% LBAs)",
+  "sectors_zeroed": 15147008,
+  "serial": "4C531001460419108542",
+  "standard": "NIST 800-88 Purge (Random)",
+  "target": "SanDisk Cruzer Blade USB Device (\\\\.\\D:)",
+  "type": "Secure Erasure",
+  "verified": true
+}

@@ -1,0 +1,19 @@
+{
+  "bytes_overwritten": 0,
+  "cluster_slack_status": "Zeroed",
+  "compliance": "NIST SP 800-88 Rev. 1 & DoD 5220.22-M Compliant",
+  "date": "2026-09-06T13:19:45.976624+00:00",
+  "files_shredded": 0,
+  "hash_algorithm": "xxHash3 & SHA-256",
+  "id": "REP-SHRED-C0577D33",
+  "mft_obfuscation": "SDelete 5-Pass Rename Verified",
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "passes": 3,
+  "slack_bytes_wiped": 0,
+  "standard": "DoD 5220.22-M (3-Pass)",
+  "streams_destroyed": 0,
+  "target": "0 file(s) selectively destroyed",
+  "type": "Selective File & Folder Forensic Shred",
+  "verified": true
+}

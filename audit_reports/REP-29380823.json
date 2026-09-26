@@ -1,0 +1,19 @@
+{
+  "bytes_overwritten": 56165924864,
+  "capacity": "7.5 GB",
+  "compliance": "IEEE 2883-2022 & NIST SP 800-88 Rev. 1 Compliant",
+  "date": "2026-09-07T06:15:33.807618400+00:00",
+  "hash": "9a8ac3d7479f2b98ec520a045a168a34",
+  "hash_algorithm": "xxHash3-128 & SHA-256",
+  "id": "REP-29380823",
+  "operator": "NTRO Forensic Workstation #01",
+  "organization": "National Technical Research Organisation (NTRO)",
+  "passes": 7,
+  "scope": "Full Drive Overwrite (100% LBAs)",
+  "sectors_zeroed": 109699072,
+  "serial": "7JZ5N198",
+  "standard": "Bruce Schneier (7-Pass)",
+  "target": "JetFlash Transcend 8GB USB Device (\\\\.\\D:)",
+  "type": "Secure Erasure",
+  "verified": true
+}
