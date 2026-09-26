@@ -1,9 +1,11 @@
 # 🎓 Expert Discussion Notes & Technical Mentorship Record
 
 > **Project:** VOID VAULT (PS-26149)  
-> **Session Topic:** Forensic Data Sanitization, Deep Carving Integrity, and BSA 2023 §63 Compliance  
-> **Date:** September 2026 | **Location:** Department of Computer Science & Cybersecurity  
-> **Participants:** Faculty Mentor / Subject Matter Expert & Team eMitra (PS ID: SIH26149)
+> **Faculty Mentor & Expert:** Prof. Radheshyam Acholiya, Head of Department (HOD) CSE  
+> **Institution:** Chameli Devi Group of Institutions (CDGI)  
+> **Date of Mentorship Session:** 18 September 2026  
+> **Team:** eMitra (Team ID: 146878) • Smart India Hackathon 2026 (NTRO)  
+> **Session Focus:** Memory-Safe Rust Architecture, Solid-State Sanitization, and BSA 2023 §63 Court Compliance
 
 ---
 

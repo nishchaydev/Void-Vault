@@ -3,8 +3,10 @@
 > **Problem Statement ID:** SIH26149  
 > **Title:** Integrated Secure Data Erasure and Advanced File Recovery Tool  
 > **Organization:** National Technical Research Organisation (NTRO)  
-> **Team:** eMitra (Team ID: 146878)  
-> **Department:** Department of Computer Science & Cybersecurity
+> **Faculty Guide & Mentor:** Prof. Radheshyam Acholiya, Head of Department (HOD) CSE  
+> **Institution:** Chameli Devi Group of Institutions (CDGI)  
+> **Date:** September 2026  
+> **Team:** eMitra (Team ID: 146878)
 
 ---
 
