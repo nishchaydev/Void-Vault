@@ -33,6 +33,8 @@ This hub organizes all **10 mandated PS deliverables**, low-level kernel bluepri
 | **08** | **PS Traceability Matrix** | Line-by-line verification proving 100% adherence to all NTRO PS-26149 requirements in source code. | 10 KB | [🎯 Read Matrix](./01-ps-traceability.md) |
 | **09** | **SIH Presentation Guide** | Jury presentation defense script, talking points, FAQ defense, and 60-second live battle demo script. | 17.8 KB | [🎤 Read Guide](./SIH_PRESENTATION_GUIDE.md) |
 | **10** | **Feasibility & National Roadmap** | Multi-dimensional feasibility, defense economics, TRL-7 maturity, and 3-phase national rollout timeline. | 8 KB | [🗺️ Read Roadmap](./13-feasibility-impact-roadmap.md) |
+| **11** | **Expert Discussion Notes** | Technical mentorship minutes covering NVMe wear-leveling, BSA 2023 §63, and UN SDG alignment. | 6 KB | [🎓 Read Notes](./Expert_Discussion_Notes.md) |
+| **12** | **Faculty Guidance Summary** | Formal faculty appraisal validating systems programming in Rust, legal compliance, and defense impact. | 6 KB | [📑 Read Summary](./Faculty_Guidance_Summary.md) |
 
 ---
 
